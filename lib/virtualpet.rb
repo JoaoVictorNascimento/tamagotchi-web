@@ -1,0 +1,2 @@
+class VirtualPet
+end
