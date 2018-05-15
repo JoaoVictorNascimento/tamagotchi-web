@@ -12,3 +12,6 @@ gem "mongoid", "~> 7.0"
 
 # Added at 2018-05-15 18:54:52 -0300 by igornfaustino:
 gem "rake", "~> 12.3"
+
+# Added at 2018-05-15 19:09:49 -0300 by igornfaustino:
+gem "sinatra-contrib", "~> 2.0"
