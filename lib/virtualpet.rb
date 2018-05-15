@@ -1,69 +1,63 @@
+require_relative '../models/virtualpetmodel'
+
 class VirtualPet
-    def initalize(name)
-        @name = name
-        @happy = 100
-        @health = 100
-        @hunger = 100
-        @higiene = 100
-        @birthday = Time.now
-        @age
-        @state = "normal"
-    end
+    attr_accessor :name, :happy, :health, :hunger,
+                  :higiene, :birthday, :age, :state
 
-    def get_name() 
-        puts @name
-    end
-
-    def get_happy()
-        puts @idade
-    end
-
-    def get_health()
-        puts @health
-    end
-
-    def get_hunger()
-        puts @hunger
-    end
-
-    def get_higiene()
-        puts @higiene
-    end
-
-    def get_birthday()
-        puts @birthday
-    end
-
-    def get_age()
-        puts @age
-    end
     
-    def get_state()
-        puts @state
-    end
+	
+	# TODO: change initialize
+	def initialize(args)
+        # name
+        @name = args["name"] unless args["name"].nil?
+        
+        # happiness
+        unless args["happy"].nil?
+            @happy = args["happy"]
+        else
+            @happy = 100
+        end
 
-    def set_state()
-        @state = state
-    end
+        # health
+        unless args["health"].nil?
+            @health = args["health"]
+        else
+            @health = 100
+        end
 
-    def set_name() 
-        @name = name
-    end
+        # hunger
+        unless args["hunger"].nil?
+            @hunger = args["hunger"]
+        else
+            @hunger = 100
+        end
 
-    def set_happy()
-        @idade = name
-    end
+        # higiene
+        unless args["higiene"].nil?
+            @higiene = args["higiene"]
+        else
+            @higiene = 100
+        end
 
-    def set_health()
-        @health = name
-    end
+        # birthday
+        unless args["birthday"].nil?
+            @birthday = args["birthday"]
+        else
+            @birthday = Time.now
+        end
 
-    def set_hunger()
-        @hunger = name
-    end
+        # age
+        unless args["age"].nil?
+            @age = args["age"]
+        else
+            @age = 0
+        end
 
-    def set_higiene()
-        @higiene = name
+        # state
+        unless args["state"].nil?
+            @state = args["state"]
+        else
+            @state = 0
+        end
     end
-
 end
