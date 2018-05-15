@@ -1,6 +1,13 @@
 production:
   clients:
     default:
+      database: virtual_pet
+      hosts:
+        - localhost:27017
+
+development:
+  clients:
+    default:
       database: virtual_pet_dev
       hosts:
         - localhost:27017

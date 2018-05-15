@@ -1,13 +1,17 @@
-require 'sinatra'
+require "sinatra/base"
+
 require_relative './lib/virtualpet'
+require_relative './config/config_database'
 
-set :port, 8080
 
-get '/' do
-  @titulo = 'TAMAGOTCHI'
-  erb:index
-end
-
-get '/signup' do
-  erb :signup
+class App < Sinatra::Base
+  get '/' do
+    @titulo = 'TAMAGOTCHI'
+    tm = VirtualPet.new('rakeup')
+    erb:index
+  end
+  
+  get '/signup' do
+    erb :signup
+  end
 end

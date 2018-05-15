@@ -1,10 +1,8 @@
 require_relative '../models/virtualpetmodel'
 
 class VirtualPet
-    attr_accessor :name, :happy, :health, :hunger,
-                  :higiene, :birthday, :age, :state
-
-    
+    attr_accessor :name, :petType, :happy, :health, :hunger,
+                  :higiene, :birthday, :age, :state, :weight    
 	
 	# TODO: change initialize
 	def initialize(args)
@@ -30,7 +28,14 @@ class VirtualPet
             @hunger = args["hunger"]
         else
             @hunger = 100
-        end
+		end
+
+		# weight
+		unless args["weight"].nil?
+			@weight = args["weight"]
+		else
+			@weight = 100
+		end
 
         # higiene
         unless args["higiene"].nil?
@@ -59,5 +64,7 @@ class VirtualPet
         else
             @state = 0
         end
+        VirtualPetModel.create({'name': 'rakeup'})
+        puts VirtualPetModel.all.to_json
     end
 end
