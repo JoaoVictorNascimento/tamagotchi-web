@@ -1,4 +1,5 @@
-require "sinatra"
+require 'sinatra'
+require_relative './lib/virtualpet'
 
 set :port, 8080
 
