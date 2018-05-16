@@ -71,5 +71,23 @@ class App < Sinatra::Base
 			pet = VirtualPet.new({})
 			{"id" => pet.id.to_s}.to_json
 		end
+
+		post '/pet/:id/feed' do |id|
+			food = json_params['food']
+			pet = VirtualPet.new({'id' => id})
+			pet.feed(food)
+			{
+				"name" => pet.name, 
+				"health" => pet.health, 
+				"petType" => pet.petType,
+				"happy" => pet.happy,
+				"hunger" => pet.hunger,
+				"higiene" => pet.higiene,
+				"birthday" => pet.birthday,
+				"age" => pet.age,
+				"state" => pet.state,
+				"weigh" => pet.weight
+			}.to_json
+		end
 	end
 end

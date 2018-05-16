@@ -7,13 +7,15 @@ class VirtualPetModel
 	field :user, type: BSON::ObjectId
 	field :petType, type: String
 	field :name, type: String
-	field :happy, type: Integer
-	field :health, type: Integer
-	field :hunger, type: Integer
-	field :weight, type: Integer
-	field :higiene, type: Integer
+	field :happy, type: Float
+	field :sleep, type: Float
+	field :health, type: Float
+	field :hunger, type: Float
+	field :weight, type: Float
+	field :higiene, type: Float
 	field :birthday, type: DateTime
 	field :lastTime, type: DateTime
-	field :age, type: Integer
+	field :age, type: Float
+	field :sleeping, type: Boolean
 	field :state, type: String
 end
