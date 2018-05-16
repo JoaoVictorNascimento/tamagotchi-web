@@ -12,7 +12,8 @@ class VirtualPetModel
 	field :hunger, type: Integer
 	field :weight, type: Integer
 	field :higiene, type: Integer
-	field :birthday, type: Date
+	field :birthday, type: DateTime
+	field :lastTime, type: DateTime
 	field :age, type: Integer
 	field :state, type: String
 end
