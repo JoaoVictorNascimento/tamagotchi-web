@@ -15,3 +15,6 @@ gem "rake", "~> 12.3"
 
 # Added at 2018-05-15 19:09:49 -0300 by igornfaustino:
 gem "sinatra-contrib", "~> 2.0"
+
+# Added at 2018-05-17 21:10:48 -0300 by igornfaustino:
+gem "jwt", "~> 2.1"

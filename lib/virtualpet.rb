@@ -1,10 +1,9 @@
 require_relative '../models/virtualpetmodel'
 
 class VirtualPet
-	attr_accessor :id, :name, :petType, :happy, :health, :hunger, :sleep,
+	attr_accessor :id, :name, :petType, :happy, :health, :hunger, :tiredness,
 				  :higiene, :birthday, :age, :state, :weight, :lastTime, :sleeping
 	
-	# TODO: change initialize
 	def initialize(args)
 		unless args['id'].nil?
 			pet = VirtualPetModel.where({'_id': BSON::ObjectId(args['id'])}).first
@@ -12,7 +11,7 @@ class VirtualPet
 			@petType = pet['petType'].to_s
 			@happy = pet['happy'].to_f
 			@health = pet['health'].to_f
-			@sleep = pet['sleep'].to_f
+			@tiredness = pet['tiredness'].to_f
 			@hunger = pet['hunger'].to_f
 			@higiene = pet['higiene'].to_f
 			@birthday = pet['birthday'].to_s
@@ -20,7 +19,7 @@ class VirtualPet
 			@state = pet['state'].to_s
 			@weight = pet['weight'].to_f
 			@lastTime = pet['lastTime'].to_s
-			@sleeping = pet['sleeping'].to_boolean
+			@sleeping = pet['sleeping'].to_s
 			@id = pet['_id'].to_s
 		else
 			# if ID is not pass... create a new pet
@@ -47,12 +46,12 @@ class VirtualPet
 			end
 			newPet['happy'] = @happy
 
-			unless args['sleep'].nil?
-				@sleep = args['sleep']
+			unless args['tiredness'].nil?
+				@tiredness = args['tiredness']
 			else
-				@sleep = 100
+				@tiredness = 100
 			end
-			newPet['sleep'] = @sleep
+			newPet['tiredness'] = @tiredness
 
 			unless args['health'].nil?
 				@health = args['health']
@@ -85,7 +84,7 @@ class VirtualPet
 			unless args['sleeping'].nil?
 				@sleeping = args['sleeping']
 			else
-				@sleeping = Time.now
+				@sleeping = 'false'
 			end
 			newPet['sleeping'] = @sleeping
 
@@ -118,13 +117,13 @@ class VirtualPet
 
 	def checkState()
 		if @state == 'normal'
-			if @health == 0 && @hunger == 0 && @higiene == 0 && @happy == 0 && @sleep == 0
+			if @health == 0 && @hunger == 0 && @higiene == 0 && @happy == 0 && @tiredness == 0
 				@state = 'dead'
 			elsif @health < 30
 				@state = 'sick'
 			elsif @hunger < 40
 				@state = 'hunger'
-			elsif @sleep < 30
+			elsif @tiredness < 30
 				@state = 'tired'
 			elsif @higiene < 50
 				@state = 'dirty'
@@ -140,7 +139,7 @@ class VirtualPet
 				@state = 'sick'
 			elsif @hunger < 50
 				@state = 'hunger'
-			elsif @sleep < 50
+			elsif @tiredness < 50
 				@state = 'tired'
 			elsif @higiene < 60
 				@state = 'dirty'
@@ -156,7 +155,7 @@ class VirtualPet
 				@state = 'dead'
 			elsif @health < 40
 				@state = 'sick'
-			elsif @sleep < 40
+			elsif @tiredness < 40
 				@state = 'tired'
 			elsif @hunger < 30
 				@state = 'hunger'
@@ -174,7 +173,7 @@ class VirtualPet
 				@state = 'dead'
 			elsif @health < 50
 				@state = 'sick'
-			elsif @sleep < 30
+			elsif @tiredness < 30
 				@state = 'tired'
 			elsif @hunger < 40
 				@state = 'hunger'
@@ -192,7 +191,7 @@ class VirtualPet
 				@state = 'dead'
 			elsif @health < 40
 				@state = 'sick'
-			elsif @sleep < 30
+			elsif @tiredness < 30
 				@state = 'tired'
 			elsif @hunger < 60
 				@state = 'hunger'
@@ -205,13 +204,13 @@ class VirtualPet
 			end
 
 		elsif @state == 'tired'
-			if @health == 0 && @hunger == 0 && @higiene == 0 && @happy == 0 && @sleep == 0
+			if @health == 0 && @hunger == 0 && @higiene == 0 && @happy == 0 && @tiredness == 0
 				@state = 'dead'
 			elsif @health < 30
 				@state = 'sick'
 			elsif @hunger < 40
 				@state = 'hunger'
-			elsif @sleep < 50
+			elsif @tiredness < 50
 				@state = 'tired'
 			elsif @higiene < 50
 				@state = 'dirty'
@@ -227,7 +226,7 @@ class VirtualPet
 		updatePet = Hash.new
 		time = Time.now
 		deltaTime = time - @lastTime.to_datetime
-		puts deltaTime
+		# puts deltaTime
 
 		updatePet['lastTime'] = @lastTime = time.to_datetime
 
@@ -236,8 +235,8 @@ class VirtualPet
 			happyRate = 1
 			hungerRate = 2
 			higieneRate = 1
-			sleepDownRate = 1
-			sleepUpRate = 2
+			tirednessDownRate = 1
+			tirednessUpRate = 2
 
 			value = 0
 			value = @health - ((healthRate * randStatus.rand(0..0.0004)) * deltaTime).to_f
@@ -253,14 +252,14 @@ class VirtualPet
 			updatePet['higiene'] = @higiene = (value > 0) ? value : 0
 
 			if @sleeping
-				value = @sleep - ((sleepUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
-				updatePet['sleep'] = @sleep = (value < 100) ? value : 100
-				if @sleep == 100
+				value = @tiredness - ((tirednessUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
+				if @tiredness == 100
 					updatePet['sleeping'] = @sleeping = false
 				end
 			else
-				value = @sleep - ((sleepDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
-				updatePet['sleep'] = @sleep = (value < 100) ? value : 100
+				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
 			end
 
 
@@ -271,8 +270,8 @@ class VirtualPet
 			happyRate = 3
 			hungerRate = 3
 			higieneRate = 3
-			sleepDownRate = 2
-			sleepUpRate = 1
+			tirednessDownRate = 2
+			tirednessUpRate = 1
 
 			value = 0
 			value = @health - ((healthRate * randStatus.rand(0..0.0004)) * deltaTime).to_f
@@ -288,14 +287,14 @@ class VirtualPet
 			updatePet['higiene'] = @higiene = (value > 0) ? value : 0
 
 			if @sleeping
-				value = @sleep - ((sleepUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
-				updatePet['sleep'] = @sleep = (value < 100) ? value : 100
-				if @sleep == 100
-					updatePet['sleeping'] = @sleeping = false
+				value = @tiredness - ((tirednessUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
+				if @tiredness == 100
+					updatePet['sleeping'] = @sleeping = "false"
 				end
 			else
-				value = @sleep - ((sleepDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
-				updatePet['sleep'] = @sleep = (value < 100) ? value : 100
+				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
 			end
 		# end sick
 
@@ -304,8 +303,8 @@ class VirtualPet
 			happyRate = 4
 			hungerRate = 1
 			higieneRate = 2
-			sleepDownRate = 1
-			sleepUpRate = 1
+			tirednessDownRate = 1
+			tirednessUpRate = 1
 
 			value = 0
 			value = @health - ((healthRate * randStatus.rand(0..0.0003)) * deltaTime).to_f
@@ -321,14 +320,14 @@ class VirtualPet
 			updatePet['higiene'] = @higiene = (value > 0) ? value : 0
 
 			if @sleeping
-				value = @sleep - ((sleepUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
-				updatePet['sleep'] = @sleep = (value < 100) ? value : 100
-				if @sleep == 100
-					updatePet['sleeping'] = @sleeping = false
+				value = @tiredness - ((tirednessUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
+				if @tiredness == 100
+					updatePet['sleeping'] = @sleeping = "false"
 				end
 			else
-				value = @sleep - ((sleepDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
-				updatePet['sleep'] = @sleep = (value < 100) ? value : 100
+				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
 			end
 		#end sad
 
@@ -337,8 +336,8 @@ class VirtualPet
 			happyRate = 2
 			hungerRate = 0.5
 			higieneRate = 4
-			sleepDownRate = 1
-			sleepUpRate = 2
+			tirednessDownRate = 1
+			tirednessUpRate = 2
 
 			value = 0
 			value = @health - ((healthRate * randStatus.rand(0..0.0003)) * deltaTime).to_f
@@ -354,14 +353,14 @@ class VirtualPet
 			updatePet['higiene'] = @higiene = (value > 0) ? value : 0
 
 			if @sleeping
-				value = @sleep - ((sleepUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
-				updatePet['sleep'] = @sleep = (value < 100) ? value : 100
-				if @sleep == 100
-					updatePet['sleeping'] = @sleeping = false
+				value = @tiredness - ((tirednessUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
+				if @tiredness == 100
+					updatePet['sleeping'] = @sleeping = "false"
 				end
 			else
-				value = @sleep - ((sleepDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
-				updatePet['sleep'] = @sleep = (value < 100) ? value : 100
+				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
 			end
 		# end dirty
 
@@ -370,8 +369,8 @@ class VirtualPet
 			happyRate = 2
 			hungerRate = 3
 			higieneRate = 1
-			sleepDownRate = 1
-			sleepUpRate = 1
+			tirednessDownRate = 1
+			tirednessUpRate = 1
 
 			value = 0
 			value = @health - ((healthRate * randStatus.rand(0..0.0003)) * deltaTime)
@@ -387,14 +386,14 @@ class VirtualPet
 			updatePet['higiene'] = @higiene = (value > 0) ? value : 0
 
 			if @sleeping
-				value = @sleep - ((sleepUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
-				updatePet['sleep'] = @sleep = (value < 100) ? value : 100
-				if @sleep == 100
+				value = @tiredness - ((tirednessUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
+				if @tiredness == 100
 					updatePet['sleeping'] = @sleeping = false
 				end
 			else
-				value = @sleep - ((sleepDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
-				updatePet['sleep'] = @sleep = (value < 100) ? value : 100
+				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
 			end
 
 		elsif @state == 'tired'
@@ -402,8 +401,8 @@ class VirtualPet
 			happyRate = 1
 			hungerRate = 3
 			higieneRate = 2
-			sleepDownRate = 3
-			sleepUpRate = 1
+			tirednessDownRate = 3
+			tirednessUpRate = 1
 
 			value = 0
 			value = @health - ((healthRate * randStatus.rand(0..0.0003)) * deltaTime)
@@ -419,19 +418,19 @@ class VirtualPet
 			updatePet['higiene'] = @higiene = (value > 0) ? value : 0
 
 			if @sleeping
-				value = @sleep - ((sleepUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
-				updatePet['sleep'] = @sleep = (value < 100) ? value : 100
-				if @sleep == 100
+				value = @tiredness - ((tirednessUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
+				if @tiredness == 100
 					updatePet['sleeping'] = @sleeping = false
 				end
 			else
-				value = @sleep - ((sleepDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
-				updatePet['sleep'] = @sleep = (value < 100) ? value : 100
+				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
 			end
 		end
-		update['age'] = @age = @birthday
+		updatePet['age'] = @age = @birthday
 		checkState()
-		update['state'] = @state
+		updatePet['state'] = @state
 		VirtualPetModel.where({'_id': @id}).first.update(updatePet)
 	end
 
@@ -482,7 +481,7 @@ class VirtualPet
 	end
 
 	def sleep()
-		@sleeping = true
-		VirtualPetModel.where({'_id': @id}).first.update({"sleeping" => true})
+		@sleeping = "true"
+		VirtualPetModel.where({'_id': @id}).first.update({"sleeping" => @sleeping})
 	end
 end

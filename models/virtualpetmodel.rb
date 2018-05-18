@@ -8,7 +8,7 @@ class VirtualPetModel
 	field :petType, type: String
 	field :name, type: String
 	field :happy, type: Float
-	field :sleep, type: Float
+	field :tiredness, type: Float
 	field :health, type: Float
 	field :hunger, type: Float
 	field :weight, type: Float
@@ -16,6 +16,6 @@ class VirtualPetModel
 	field :birthday, type: DateTime
 	field :lastTime, type: DateTime
 	field :age, type: Float
-	field :sleeping, type: Boolean
+	field :sleeping, type: String
 	field :state, type: String
 end
