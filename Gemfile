@@ -18,3 +18,6 @@ gem "sinatra-contrib", "~> 2.0"
 
 # Added at 2018-05-17 21:10:48 -0300 by igornfaustino:
 gem "jwt", "~> 2.1"
+
+# Added at 2018-05-20 16:10:59 -0300 by igornfaustino:
+gem "bcrypt", "~> 3.1"

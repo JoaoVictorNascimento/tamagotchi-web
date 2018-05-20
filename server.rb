@@ -1,9 +1,12 @@
 require "sinatra/base"
 require "sinatra/namespace"
 require "jwt"
+require "bcrypt"
 
 require_relative './lib/virtualpet'
 require_relative './config/config_database'
+require_relative './models/usersmodel'
+require_relative './models/virtualpetmodel'
 
 
 class App < Sinatra::Base
@@ -43,7 +46,6 @@ class App < Sinatra::Base
 
 		def authorized?
 			@token = extract_token
-			puts @token
 			begin
 				payload, header = JWT.decode(@token, :session_secret.to_s, true, { algorithm: 'HS256' })
 		
@@ -67,20 +69,39 @@ class App < Sinatra::Base
 
 	namespace '/api' do
 
+		post '/createuser' do
+			json = json_params
+			username = json['username']
+			password = json['password']
+			password = BCrypt::Password.create(password)
+			if UserModel.where("username" => username).first.nil?
+				user = UserModel.create({"username" => username, "password" => password})
+				user.to_json
+			else
+				halt 400, { message:'User already exists' }.to_json
+			end
+		end
+
 		post '/login' do
 			json = json_params
 			username = json['username']
 			password = json['password']
 
-			# check the username and password
-			if username == "username" && password == "password"
-				@token = JWT.encode({user_id: 123456}, :session_secret.to_s, 'HS256')
+			user = UserModel.where({'username' => username}).first
+			if user.nil?
+				halt 400, { message:'User not exists' }.to_json
+			end
+
+			# check the password
+			db_password = BCrypt::Password.new(user["password"].to_s)
+
+			if db_password == password
+				@token = JWT.encode({user_id: user['_id'].to_s}, :session_secret.to_s, 'HS256')
 				
 				session["access_token"] = @token
 				{'token' => @token}.to_json
 			else
-				@message = "Username/Password failed."
-				erb:index
+				"Username/Password failed."
 			end
 		end
 
@@ -90,7 +111,13 @@ class App < Sinatra::Base
 		end
 
 		get '/pets' do
+			protected!
+			VirtualPetModel.where({}).to_json
+		end
 
+		get '/userpets' do
+			protected!
+			VirtualPetModel.where({"user" => BSON::ObjectId(@user_id)}).to_json
 		end
 
 		get '/pet/:id' do |id|
@@ -99,6 +126,7 @@ class App < Sinatra::Base
 			# pet.update
 			{
 				"name" => pet.name, 
+				"user" => pet.user,
 				"health" => pet.health, 
 				"petType" => pet.petType,
 				"happy" => pet.happy,
@@ -115,7 +143,8 @@ class App < Sinatra::Base
 
 		post '/pet' do
 			protected!
-			pet = VirtualPet.new({})
+			json = json_params
+			pet = VirtualPet.new({"name" => json["name"], "user" => @user_id})
 			{"id" => pet.id.to_s}.to_json
 		end
 
@@ -126,6 +155,7 @@ class App < Sinatra::Base
 			pet.feed(value)
 			{
 				"name" => pet.name, 
+				"user" => pet.user,
 				"health" => pet.health, 
 				"petType" => pet.petType,
 				"happy" => pet.happy,
@@ -147,6 +177,7 @@ class App < Sinatra::Base
 			pet.cleen(value)
 			{
 				"name" => pet.name, 
+				"user" => pet.user,
 				"health" => pet.health, 
 				"petType" => pet.petType,
 				"happy" => pet.happy,
@@ -168,6 +199,7 @@ class App < Sinatra::Base
 			pet.play(value)
 			{
 				"name" => pet.name, 
+				"user" => pet.user,
 				"health" => pet.health, 
 				"petType" => pet.petType,
 				"happy" => pet.happy,
@@ -189,6 +221,7 @@ class App < Sinatra::Base
 			pet.heal(value)
 			{
 				"name" => pet.name, 
+				"user" => pet.user,
 				"health" => pet.health, 
 				"petType" => pet.petType,
 				"happy" => pet.happy,
@@ -210,6 +243,7 @@ class App < Sinatra::Base
 			pet.sleep()
 			{
 				"name" => pet.name, 
+				"user" => pet.user,
 				"health" => pet.health, 
 				"petType" => pet.petType,
 				"happy" => pet.happy,

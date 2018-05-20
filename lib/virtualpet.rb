@@ -1,13 +1,14 @@
 require_relative '../models/virtualpetmodel'
 
 class VirtualPet
-	attr_accessor :id, :name, :petType, :happy, :health, :hunger, :tiredness,
+	attr_accessor :id, :name, :petType, :happy, :health, :hunger, :tiredness, :user,
 				  :higiene, :birthday, :age, :state, :weight, :lastTime, :sleeping
 	
 	def initialize(args)
 		unless args['id'].nil?
 			pet = VirtualPetModel.where({'_id': BSON::ObjectId(args['id'])}).first
 			@name = pet['name'].to_s
+			@user = pet['user'].to_s
 			@petType = pet['petType'].to_s
 			@happy = pet['happy'].to_f
 			@health = pet['health'].to_f
@@ -31,6 +32,13 @@ class VirtualPet
 				@name = 'pet'
 			end
 			newPet['name'] = @name
+
+			unless args['user'].nil?
+				@user = args['user']
+			else
+				@user = nil
+			end
+			newPet['user'] = @user
 
 			unless args['petType'].nil?
 				@petType = args['petType']
@@ -435,53 +443,61 @@ class VirtualPet
 	end
 
 	def feed(value)
-		updatePet = Hash.new
-		value = @hunger + value
-		updatePet['hunger'] = @hunger = (value < 100) ? value : 100
-		value = @weight + value/100.0
-		updatePet['weight'] = @weight = (value < 100) ? value : 100
-		checkState()
-		update['state'] = @state
-		VirtualPetModel.where({'_id': @id}).first.update(updatePet)
+		unless @sleeping
+			updatePet = Hash.new
+			value = @hunger + value
+			updatePet['hunger'] = @hunger = (value < 100) ? value : 100
+			value = @weight + value/100.0
+			updatePet['weight'] = @weight = (value < 100) ? value : 100
+			checkState()
+			update['state'] = @state
+			VirtualPetModel.where({'_id': @id}).first.update(updatePet)
+		end
 	end
 
 	def cleen(value)
-		updatePet = Hash.new
-		value = @higiene + value
-		updatePet['higiene'] = @higiene = (value < 100) ? value : 100
-		value = @health + value/4
-		updatePet['health'] = @health = (value < 100) ? value : 100
-		checkState()
-		update['state'] = @state
-		VirtualPetModel.where({'_id': @id}).first.update(updatePet)
+		unless @sleeping
+			updatePet = Hash.new
+			value = @higiene + value
+			updatePet['higiene'] = @higiene = (value < 100) ? value : 100
+			value = @health + value/4
+			updatePet['health'] = @health = (value < 100) ? value : 100
+			checkState()
+			update['state'] = @state
+			VirtualPetModel.where({'_id': @id}).first.update(updatePet)
+		end
 	end
 
 	def play(value)
-		updatePet = Hash.new
-		value = @happy + value
-		updatePet['happy'] = @happy = (value < 100) ? value : 100
-		value = @health + value/4
-		updatePet['health'] = @health = (value < 100) ? value : 100
-		value = @weight - value/100
-		updatePet['weight'] = @weight = (value < 100) ? value : 100
-		checkState()
-		update['state'] = @state
-		VirtualPetModel.where({'_id': @id}).first.update(updatePet)
+		unless @sleeping
+			updatePet = Hash.new
+			value = @happy + value
+			updatePet['happy'] = @happy = (value < 100) ? value : 100
+			value = @health + value/4
+			updatePet['health'] = @health = (value < 100) ? value : 100
+			value = @weight - value/100
+			updatePet['weight'] = @weight = (value < 100) ? value : 100
+			checkState()
+			update['state'] = @state
+			VirtualPetModel.where({'_id': @id}).first.update(updatePet)
+		end
 	end
 
 	def heal(value)
-		updatePet = Hash.new
-		value = @health + value
-		updatePet['health'] = @health = (value < 100) ? value : 100
-		value = @happy + value/4
-		updatePet['happy'] = @happy = (value < 100) ? value : 100
-		checkState()
-		update['state'] = @state
-		VirtualPetModel.where({'_id': @id}).first.update(updatePet)
+		unless @sleeping
+			updatePet = Hash.new
+			value = @health + value
+			updatePet['health'] = @health = (value < 100) ? value : 100
+			value = @happy + value/4
+			updatePet['happy'] = @happy = (value < 100) ? value : 100
+			checkState()
+			update['state'] = @state
+			VirtualPetModel.where({'_id': @id}).first.update(updatePet)
+		unless
 	end
 
 	def sleep()
-		@sleeping = "true"
+		@sleeping = !@sleeping
 		VirtualPetModel.where({'_id': @id}).first.update({"sleeping" => @sleeping})
 	end
 end
