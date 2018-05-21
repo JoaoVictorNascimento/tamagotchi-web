@@ -7,6 +7,7 @@ function login(){
         password: password
     }).then(function (res) {
         window.localStorage.setItem('token', res.data.token);
+        window.location.href = "/mypets";
     }).catch(function (err) {
         console.log(err)
         alert(err.response.data.message)

@@ -259,15 +259,16 @@ class VirtualPet
 			value = @higiene - ((higieneRate * randStatus.rand(0.0001..0.0009)) * deltaTime).to_f
 			updatePet['higiene'] = @higiene = (value > 0) ? value : 0
 
-			if @sleeping
-				value = @tiredness - ((tirednessUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
+			if @sleeping == 'true' || @sleeping == true
+				value = @tiredness + ((tirednessUpRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
 				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
 				if @tiredness == 100
 					updatePet['sleeping'] = @sleeping = false
 				end
 			else
-				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
-				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
+				puts 'teste'
+				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value > 0) ? value : 0
 			end
 
 
@@ -294,15 +295,16 @@ class VirtualPet
 			value = @higiene - ((higieneRate * randStatus.rand(0.0001..0.0009)) * deltaTime).to_f
 			updatePet['higiene'] = @higiene = (value > 0) ? value : 0
 
-			if @sleeping
-				value = @tiredness - ((tirednessUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
+			if @sleeping == 'true' || @sleeping == true
+				value = @tiredness + ((tirednessUpRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
 				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
 				if @tiredness == 100
-					updatePet['sleeping'] = @sleeping = "false"
+					updatePet['sleeping'] = @sleeping = false
 				end
 			else
-				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
-				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
+				puts 'teste'
+				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value > 0) ? value : 0
 			end
 		# end sick
 
@@ -327,15 +329,16 @@ class VirtualPet
 			value = @higiene - ((higieneRate * randStatus.rand(0.0002..0.0005)) * deltaTime).to_f
 			updatePet['higiene'] = @higiene = (value > 0) ? value : 0
 
-			if @sleeping
-				value = @tiredness - ((tirednessUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
+			if @sleeping == 'true' || @sleeping == true
+				value = @tiredness + ((tirednessUpRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
 				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
 				if @tiredness == 100
-					updatePet['sleeping'] = @sleeping = "false"
+					updatePet['sleeping'] = @sleeping = false
 				end
 			else
-				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
-				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
+				puts 'teste'
+				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value > 0) ? value : 0
 			end
 		#end sad
 
@@ -360,15 +363,16 @@ class VirtualPet
 			value = @higiene - ((higieneRate * randStatus.rand(0.0002..0.0005)) * deltaTime).to_f
 			updatePet['higiene'] = @higiene = (value > 0) ? value : 0
 
-			if @sleeping
-				value = @tiredness - ((tirednessUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
+			if @sleeping == 'true' || @sleeping == true
+				value = @tiredness + ((tirednessUpRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
 				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
 				if @tiredness == 100
-					updatePet['sleeping'] = @sleeping = "false"
+					updatePet['sleeping'] = @sleeping = false
 				end
 			else
-				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
-				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
+				puts 'teste'
+				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value > 0) ? value : 0
 			end
 		# end dirty
 
@@ -393,15 +397,16 @@ class VirtualPet
 			value = @higiene - ((higieneRate * randStatus.rand(0.0002..0.0005)) * deltaTime)
 			updatePet['higiene'] = @higiene = (value > 0) ? value : 0
 
-			if @sleeping
-				value = @tiredness - ((tirednessUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
+			if @sleeping == 'true' || @sleeping == true
+				value = @tiredness + ((tirednessUpRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
 				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
 				if @tiredness == 100
 					updatePet['sleeping'] = @sleeping = false
 				end
 			else
-				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
-				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
+				puts 'teste'
+				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value > 0) ? value : 0
 			end
 
 		elsif @state == 'tired'
@@ -425,20 +430,22 @@ class VirtualPet
 			value = @higiene - ((higieneRate * randStatus.rand(0.0002..0.0005)) * deltaTime)
 			updatePet['higiene'] = @higiene = (value > 0) ? value : 0
 
-			if @sleeping
-				value = @tiredness - ((tirednessUpRate * randStatus.rand(0.0009..0.0015)) * deltaTime).to_f
+			if @sleeping == 'true' || @sleeping == true
+				value = @tiredness + ((tirednessUpRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
 				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
 				if @tiredness == 100
 					updatePet['sleeping'] = @sleeping = false
 				end
 			else
-				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.0009..0.0004)) * deltaTime).to_f
-				updatePet['tiredness'] = @tiredness = (value < 100) ? value : 100
+				puts 'teste'
+				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
+				updatePet['tiredness'] = @tiredness = (value > 0) ? value : 0
 			end
 		end
 		updatePet['age'] = @age = @birthday
 		checkState()
 		updatePet['state'] = @state
+		puts @tiredness
 		VirtualPetModel.where({'_id': @id}).first.update(updatePet)
 	end
 

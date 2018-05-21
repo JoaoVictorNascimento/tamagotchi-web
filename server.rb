@@ -60,19 +60,22 @@ class App < Sinatra::Base
 
 	get '/' do
 		@titulo = 'TAMAGOTCHI'
-		erb:index
+		erb :index
 	end
 
-	get '/menu' do 
+	get '/menu' do
+		protected!
 		erb :menu 
 	  end 
 	 
-	post '/menu' do 
+	post '/menu' do
+		protected!
 		redirect '/menu' 
 	end 
 	 
-	get '/tamagotchi' do 
-		 erb :tamagotchi 
+	get '/tamagotchi' do
+		protected!
+		erb :tamagotchi 
 	end 
 	 
 	get '/newpets' do 
@@ -147,7 +150,7 @@ class App < Sinatra::Base
 		get '/pet/:id' do |id|
 			protected!
 			pet = VirtualPet.new({'id' => id})
-			# pet.update
+			pet.update
 			{
 				"name" => pet.name, 
 				"user" => pet.user,
