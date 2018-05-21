@@ -76,9 +76,9 @@ class App < Sinatra::Base
 			password = BCrypt::Password.create(password)
 			if UserModel.where("username" => username).first.nil?
 				user = UserModel.create({"username" => username, "password" => password})
-				user.to_json
+				user['_id'].to_json
 			else
-				halt 400, { message:'User already exists' }.to_json
+				halt 400, { message:'Usuario já cadastrado' }.to_json
 			end
 		end
 
@@ -101,7 +101,7 @@ class App < Sinatra::Base
 				session["access_token"] = @token
 				{'token' => @token}.to_json
 			else
-				"Username/Password failed."
+				halt 400, { message:'Usuario ou senha incorreto' }.to_json
 			end
 		end
 
