@@ -493,7 +493,7 @@ class VirtualPet
 			checkState()
 			update['state'] = @state
 			VirtualPetModel.where({'_id': @id}).first.update(updatePet)
-		unless
+		end
 	end
 
 	def sleep()
