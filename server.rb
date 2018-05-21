@@ -62,6 +62,30 @@ class App < Sinatra::Base
 		@titulo = 'TAMAGOTCHI'
 		erb:index
 	end
+
+	get '/menu' do 
+		erb :menu 
+	  end 
+	 
+	post '/menu' do 
+		redirect '/menu' 
+	end 
+	 
+	get '/tamagotchi' do 
+		 erb :tamagotchi 
+	end 
+	 
+	get '/newpets' do 
+		erb :newpets 
+	end 
+	 
+	get '/mypets' do 
+		erb :mypets 
+	end 
+	 
+	get'/ranking' do 
+		erb :ranking 
+	end 
 	
 	get '/signup' do
 		erb :signup

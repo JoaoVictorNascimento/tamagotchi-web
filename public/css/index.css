@@ -4,16 +4,17 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    position: relative;
 }
 
-.gif{
+.gif {
     width: 500px;
     height: 500px;
     border-radius: 13px;
 }
-
-.form{
+ 
+.form {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -21,19 +22,37 @@
     transform: translate(-50%, -50%) 
 }
 
-.title{
+.title {
     font-size: 26px;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 4px;
     color: rgb(149, 146, 146);
+    margin-bottom: 150px;
+}
+ 
+.title-mypets {
+    position: fixed;
+    top: 40px;
 }
 
-body{
+body {
     margin: 0;
 }
-input{
+ 
+p {
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+    color: rgb(149, 146, 146);
+}
+ 
+a:link {
+    color: rgb(128, 24, 24);
+}
+
+input {
     border: none;
-    border-bottom: 1px solid rgb(149, 146, 146);
+    border-bottom: 1px solid rgb(128, 24, 24);
     margin-top: 12px;
     padding: 6px;
     background-color: transparent;
@@ -43,8 +62,8 @@ input{
     font-size: 12px;
     color: black;
 }
-
-.button{
+ 
+.button {
     border: 1px solid rgb(149, 146, 146);
     border-radius: 6px;
     outline: none;
@@ -57,29 +76,316 @@ input{
     background-color: transparent;
 }
 
+.div-status-bar {
+    width: 500px;
+    height: 90px;
+    background: linear-gradient(to top, rgba(255,0,0,0), rgb(109, 109, 109));
+    border-radius: 13px;
+    position: absolute;
+    top: -211px;
+}
+ 
+.div-buttons {
+    width: 500px;
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(255,0,0,0), rgb(109, 109, 109));
+    border-radius: 13px;
+    position: relative;
+    bottom: -211px;
+}
+
+.button-circle {
+    background-color: #acaaaa;
+    opacity: 0.7;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #d0d0d0;
+    border-radius: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    text-align: center;
+    outline: none;
+    position: relative;
+    top: 28px;
+}
+
+.button-circle:hover {
+    background-color: #edeaea;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #d0d0d0;
+    border-radius: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    text-align: center;
+    outline: none;
+    position: relative;
+    top: 28px;
+}
+
+.button-circle-menu {
+    background-color: #acaaaa;
+    opacity: 0.7;
+    height: 40px;
+    width: 40px;
+    border: 1px solid #d0d0d0;
+    border-radius: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    text-align: center;
+    outline: none;
+    position: relative;
+    top: 28px;
+}
+
+.button-circle-menu:hover {
+    background-color: #edeaea;
+    height: 40px;
+    width: 40px;
+    border: 1px solid #d0d0d0;
+    border-radius: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    text-align: center;
+    outline: none;
+    position: relative;
+    top: 28px;
+}
+
+
+.size {
+    font-size: 8px;
+}
+ 
 .button:hover {
     background-color: rgb(183, 182, 182);
     color: black;
 }
+ 
+.btn-menu:hover {
+    background-color: rgb(183, 182, 182);
+    color: black;
+}
 
-::placeholder{
+.btn-menu {
+    border: 1px solid rgb(149, 146, 146);
+    border-radius: 6px;
+    outline: none;
+    width: 100px;
+    height: 40px;
+    margin-top: 25px;
+    margin-bottom: 17px;
+    opacity: 0.6;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    background-color: transparent;
+}
+
+::placeholder {
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
     margin-top: 3px;
     color: rgb(149, 146, 146);
 }
-
-.login{
+ 
+.login {
     margin-top: 150px;
 }
+ 
+.label_pet {
+    margin-top: 100px;
+}
 
+.input_pet {
+    color: green;
+}
+ 
 a:link { 
     text-decoration:none; 
 }
-
-.box{
+ 
+.box {
     background-color: rgb(60, 60, 60);
     width: 500px;
     height: 500px;
     border-radius: 13px;
 }
+
+.avatar {
+    width: 30px;
+    border-radius:50%;
+}
+
+.list-group {
+    display:-ms-flexbox;
+    display:block;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    -ms-overflow-style:-ms-autohiding-scrollbar;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    padding-left:0;
+    margin-bottom:0;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(72, 71, 71);
+    box-shadow: 2px 5px  rgb(42, 41, 41);
+    max-height: 266px;
+}
+
+.list-group-item {
+    position:relative;
+    display:block;
+    padding:.75rem 1.25rem;
+    margin-bottom:-1px;
+    box-shadow: 0px 2.2px  rgb(42, 41, 41);
+}
+ 
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 2px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar:hover {
+    width: 5px;
+    border-radius: 2px;
+}
+ 
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(42, 41, 41);
+    border-radius: 2px;
+}
+ 
+.gif_pet {
+    margin-right: 23px;
+    margin-left: 20px;
+    width:50px;
+}
+
+.pet_list {
+    right: 20px;
+    width: 100px;
+    height: 300px;
+}
+ 
+.col {
+    -ms-flex-preferred-size:0;
+    flex-basis:0;
+    -ms-flex-positive:1;
+    flex-grow:1;
+    max-width:100%;
+    height: 50px;
+}
+
+.row {
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    margin-right:-15px;
+    margin-left:-15px;
+}
+ 
+.infopet {
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+    color: rgb(149, 146, 146);
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.infopet-ranking {
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+    color: rgb(149, 146, 146);
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 5px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+ 
+.status-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    top: 0px;
+    position: absolute;
+}
+
+.status {
+    border-radius: 4px;
+    float: left;
+    margin-left: 9px;
+    margin-right: 10px;
+    margin-top: 20px;
+    
+}
+ 
+label {
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+    color: rgb(40, 39, 39);
+}
+
+progress {
+    border: 0;
+    height: 5px;
+    width: 80px;
+ 
+}
+ 
+progress::-webkit-progress-bar {
+    border: 0;
+    height: 5px;
+    width: 60px;
+    color: rgb(91, 22, 22);
+}
+
+progress::-webkit-progress-value {
+    border: 0;
+    height: 5px;
+    width: 60px;
+    color: rgb(70, 70, 70);
+ 
+}
+ 
+progress::-moz-progress-bar {
+    border: 0;
+    height: 5px;
+    width: 60px;
+    position: relative;
+    color: rgb(119, 22, 22);
+}
+
+ 
+.gif-tamagotchi {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    right: 182px;
+}
+
+ 
+
+ 
+ 

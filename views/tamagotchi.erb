@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <body class='container'>
-        <center>
-        <div>
-            <label for="Hunger"></label>
-                <progress value='56' max= '100' id='Hunger'></progress>
-            <label for="Energy"></label>
-                <progress value='12' max= '100' id='Energy'></progress>
-            <label for="Higiene"></label>
-                <progress value='34' max= '100' id='Higiene'></progress>
-            <label for="Fun"></label>
-                <progress value='54' max= '100' id='Fun'></progress>
-            <label for="Health"></label>
-                <progress value='23' max= '100' id='Health'></progress>
+    <body>
+        <div class="container">
+            <img src="images/ambient.gif" class="gif">
+                <center class="form">
+                    <div class="div-status-bar">
+                    <ul class="status-bar">
+                        <li class="status">
+                            <label for="health">HEALTH</label></br>
+                            <progress value="250" max="1000" id="health"></progress>
+                        </li>
+                         <li class="status">
+                            <label for="happy">HAPPY</label></br>
+                            <progress value="156" max="1000" id="happy"></progress>
+                        </li>
+                        <li class="status">
+                            <label for="hunger">HUNGER</label></br>
+                            <progress value="350" max="1000" id="hunger"></progress>
+                        </li>
+                         <li class="status">
+                            <label for="tired">TIRED</label></br>
+                            <progress value="550" max="1000" id="energy"></progress>
+                        </li>
+                        <li class="status">
+                            <label for="higiene">HIGIENE</label></br>
+                            <progress value="450" max="1000" id="higiene"></progress>
+                        </li>
+                    </ul>
+                    </div>
+                    <img src="images/gengar.gif" class="gif-tamagotchi"> 
+                     <div class="div-buttons">
+                        <button class="button-circle"><i class="fa fa-cutlery fa-lg" aria-hidden="true"></i></button>
+                        <button class="button-circle"><i class="fa fa-bath fa-lg" aria-hidden="true"></i></button>
+                        <button class="button-circle"><i class="fa fa-bed fa-lg" aria-hidden="true"></i></button>
+                      <a href='/menu'><button class="button-circle-menu"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></button></a>
+                        <button class="button-circle"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></button>
+                        <button class="button-circle"><i class="fa fa-gamepad fa-lg" aria-hidden="true"></i></button>
+                        <button class="button-circle"><i class="fa fa-info fa-lg" aria-hidden="true"></i></button>
+                    </div>   
+                <center>
         </div>
-        <img src="images/giphy.gif" class="gif">
-        </center>
     </body>
 </html>
