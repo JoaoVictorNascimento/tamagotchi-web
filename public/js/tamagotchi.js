@@ -7,7 +7,7 @@ function sleep(ms) {
 // TODO update values on screen
 // TODO save pet id
 async function update() {
-    let res = await axios.get('api/pet/'+petId)
+    let res = await axios.get('api/pet/' + petId)
     data = res.data
     console.log(data)
     $('#health').val(data.health)
@@ -20,5 +20,15 @@ async function update() {
 }
 
 $(document).ready(function () {
-    update()
+    axios.get('api/pet/' + petId).then(function (res) {
+        data = res.data
+        $('#health').val(data.health)
+        $('#happy').val(data.happy)
+        $('#hunger').val(data.hunger)
+        $('#energy').val(data.tiredness)
+        $('#higiene').val(data.higiene)
+        $('#pet').attr("src", "images/" + data.petType + ".gif");
+        console.log( $('#pet'))
+        update()
+    })
 });
