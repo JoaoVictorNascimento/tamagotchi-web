@@ -6,7 +6,7 @@ $(document).ready(function () {
             $('#pets ul').append(
                 '<li class="list-group-item" id='+ pet._id.$oid +' onClick="choosePet(this)">' +
                     '<div class="row">'+
-                        '<div class="col infopet">' +
+                        '<div class="col infopet-gif">' +
                             '<img src="images/' + pet.petType + '.gif" class="gif_pet">' +
                         '</div>' +
                         '<div class="col infopet">' +
