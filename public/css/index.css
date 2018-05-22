@@ -9,8 +9,8 @@
 }
 
 .gif {
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
     border-radius: 13px;
 }
  
@@ -69,29 +69,38 @@ input {
     outline: none;
     padding: 6px 17px;
     margin-top: 25px;
-    margin-bottom: 17px;
     opacity: 0.6;
     font-family: 'Montserrat', sans-serif;
     color: black;
     background-color: transparent;
 }
 
+.wallpaper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
 .div-status-bar {
-    width: 500px;
-    height: 90px;
+    width: 701px;
+    height: 100px;
     background: linear-gradient(to top, rgba(255,0,0,0), rgb(109, 109, 109));
     border-radius: 13px;
     position: absolute;
-    top: -211px;
+    top: -300px;
+    left: 1px;
 }
  
 .div-buttons {
-    width: 500px;
-    height: 80px;
+    width: 702px;
+    height: 100px;
     background: linear-gradient(to bottom, rgba(255,0,0,0), rgb(109, 109, 109));
     border-radius: 13px;
     position: relative;
-    bottom: -211px;
+    bottom: -300px;
 }
 
 .button-circle {
@@ -101,8 +110,8 @@ input {
     width: 30px;
     border: 1px solid #d0d0d0;
     border-radius: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
     display: inline-block;
     text-align: center;
     outline: none;
@@ -116,8 +125,8 @@ input {
     width: 30px;
     border: 1px solid #d0d0d0;
     border-radius: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
     display: inline-block;
     text-align: center;
     outline: none;
@@ -132,8 +141,8 @@ input {
     width: 40px;
     border: 1px solid #d0d0d0;
     border-radius: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
     display: inline-block;
     text-align: center;
     outline: none;
@@ -147,8 +156,8 @@ input {
     width: 40px;
     border: 1px solid #d0d0d0;
     border-radius: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
     display: inline-block;
     text-align: center;
     outline: none;
@@ -210,8 +219,8 @@ a:link {
  
 .box {
     background-color: rgb(60, 60, 60);
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
     border-radius: 13px;
 }
 
@@ -234,13 +243,13 @@ a:link {
     border-radius: 5px;
     background-color: rgb(72, 71, 71);
     box-shadow: 2px 5px  rgb(42, 41, 41);
-    max-height: 266px;
+    max-height:421px;
 }
 
 .list-group-item {
     position:relative;
     display:block;
-    padding:.75rem 1.25rem;
+    padding: 1.75rem 3.25rem;
     margin-bottom:-1px;
     box-shadow: 0px 2.2px  rgb(42, 41, 41);
 }
@@ -276,7 +285,19 @@ a:link {
     width: 100px;
     height: 300px;
 }
- 
+
+.image-pet-ranked {
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+    color: rgb(149, 146, 146);
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 15px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .col {
     -ms-flex-preferred-size:0;
     flex-basis:0;
@@ -291,8 +312,8 @@ a:link {
     display:flex;
     -ms-flex-wrap:wrap;
     flex-wrap:wrap;
-    margin-right:-15px;
-    margin-left:-15px;
+    margin-right: 0px;
+    margin-left: 0px;
 }
  
 .infopet {
@@ -314,27 +335,31 @@ a:link {
     letter-spacing: 4px;
     color: rgb(149, 146, 146);
     text-align: left;
-    margin-top: 10px;
-    margin-bottom: 5px; 
+    margin-top: 20px;
+    margin-bottom: 15px;
+    margin-left: 135px; 
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.line-infopet {
+    margin-bottom: 5px;
 }
  
 .status-bar {
     list-style-type: none;
-    margin: 0;
     padding: 0;
     overflow: hidden;
     border-radius: 4px;
-    top: 0px;
     position: absolute;
+    left: 36px;
 }
 
 .status {
     border-radius: 4px;
     float: left;
-    margin-left: 9px;
-    margin-right: 10px;
+    margin-left: 18px;
+    margin-right: 30px;
     margin-top: 20px;
     
 }
@@ -379,10 +404,11 @@ progress::-moz-progress-bar {
 
  
 .gif-tamagotchi {
-    width: 150px;
-    height: 150px;
+    width: 210px;
+    height: 210px;
     position: absolute;
-    right: 182px;
+    right: 226px;
+    top: 3px;
 }
 
 .select_pet:hover {
@@ -400,5 +426,7 @@ progress::-moz-progress-bar {
     /* opacity: 0.5; */
     border-radius: 5px;
 }
+
+
  
  

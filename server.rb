@@ -78,15 +78,18 @@ class App < Sinatra::Base
 		erb :tamagotchi 
 	end 
 	 
-	get '/newpets' do 
+	get '/newpets' do
+		protected! 
 		erb :newpets 
 	end 
 	 
-	get '/mypets' do 
+	get '/mypets' do
+		protected! 
 		erb :mypets 
 	end 
 	 
-	get'/ranking' do 
+	get'/ranking' do
+		protected! 
 		erb :ranking 
 	end 
 	
