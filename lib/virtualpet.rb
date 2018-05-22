@@ -1,7 +1,8 @@
+require 'date'
 require_relative '../models/virtualpetmodel'
 
 class VirtualPet
-	attr_accessor :id, :name, :petType, :happy, :health, :hunger, :tiredness, :user,
+	attr_accessor :id, :name, :petType, :happy, :health, :hunger, :tiredness, :user, :creator,
 				  :higiene, :birthday, :age, :state, :weight, :lastTime, :sleeping
 	
 	def initialize(args)
@@ -9,6 +10,7 @@ class VirtualPet
 			pet = VirtualPetModel.where({'_id': BSON::ObjectId(args['id'])}).first
 			@name = pet['name'].to_s
 			@user = pet['user'].to_s
+			@creator = pet['creator'].to_s
 			@petType = pet['petType'].to_s
 			@happy = pet['happy'].to_f
 			@health = pet['health'].to_f
@@ -39,6 +41,13 @@ class VirtualPet
 				@user = nil
 			end
 			newPet['user'] = @user
+
+			unless args['creator'].nil?
+				@creator = args['creator']
+			else
+				@creator = nil
+			end
+			newPet['creator'] = @creator
 
 			unless args['petType'].nil?
 				@petType = args['petType']
@@ -266,7 +275,6 @@ class VirtualPet
 					updatePet['sleeping'] = @sleeping = false
 				end
 			else
-				puts 'teste'
 				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
 				updatePet['tiredness'] = @tiredness = (value > 0) ? value : 0
 			end
@@ -302,7 +310,6 @@ class VirtualPet
 					updatePet['sleeping'] = @sleeping = false
 				end
 			else
-				puts 'teste'
 				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
 				updatePet['tiredness'] = @tiredness = (value > 0) ? value : 0
 			end
@@ -336,7 +343,6 @@ class VirtualPet
 					updatePet['sleeping'] = @sleeping = false
 				end
 			else
-				puts 'teste'
 				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
 				updatePet['tiredness'] = @tiredness = (value > 0) ? value : 0
 			end
@@ -370,7 +376,6 @@ class VirtualPet
 					updatePet['sleeping'] = @sleeping = false
 				end
 			else
-				puts 'teste'
 				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
 				updatePet['tiredness'] = @tiredness = (value > 0) ? value : 0
 			end
@@ -404,7 +409,6 @@ class VirtualPet
 					updatePet['sleeping'] = @sleeping = false
 				end
 			else
-				puts 'teste'
 				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
 				updatePet['tiredness'] = @tiredness = (value > 0) ? value : 0
 			end
@@ -437,15 +441,14 @@ class VirtualPet
 					updatePet['sleeping'] = @sleeping = false
 				end
 			else
-				puts 'teste'
 				value = @tiredness - ((tirednessDownRate * randStatus.rand(0.00009..0.0015)) * deltaTime).to_f
 				updatePet['tiredness'] = @tiredness = (value > 0) ? value : 0
 			end
 		end
-		updatePet['age'] = @age = @birthday
+		@age = days_between = (Date.parse(Time.now.to_s) - Date.parse(@birthday.to_s)).round
+		updatePet['age'] = @age
 		checkState()
 		updatePet['state'] = @state
-		puts @tiredness
 		VirtualPetModel.where({'_id': @id}).first.update(updatePet)
 	end
 
