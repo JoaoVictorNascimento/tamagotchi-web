@@ -22,9 +22,9 @@ $(document).ready(function () {
         })
         data.forEach(pet => {
             $('#pets ul').append(
-                '<li class="list-group-item" id=' + pet._id.$oid + ' onClick="choosePet(this)">' +
+                '<li class="list-group-item" id=' + pet._id.$oid + '>' +
                     '<div class="row">' +
-                        '<div class="col infopet">' +
+                        '<div class="col image-pet-ranked">' +
                             '<img src="images/' + pet.petType + '.gif" class="gif_pet">' +
                         '</div>' +
                         '<div class="col infopet-ranking">'+

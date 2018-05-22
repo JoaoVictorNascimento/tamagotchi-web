@@ -351,6 +351,7 @@ a:link {
     margin-left: 135px; 
     overflow: hidden;
     text-overflow: ellipsis;
+    padding: 10px;
 }
 
 .line-infopet {
