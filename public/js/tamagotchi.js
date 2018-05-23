@@ -30,5 +30,7 @@ $(document).ready(function () {
         $('#pet').attr("src", "images/" + data.petType + ".gif");
         console.log( $('#pet'))
         update()
+    }).catch(function (err) {
+        console.log(err)
     })
 });

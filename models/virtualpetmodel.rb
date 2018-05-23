@@ -5,6 +5,7 @@ class VirtualPetModel
 	include Mongoid::Document
 
 	field :user, type: BSON::ObjectId
+	field :creator, type: String
 	field :petType, type: String
 	field :name, type: String
 	field :happy, type: Float

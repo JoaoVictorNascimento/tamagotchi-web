@@ -172,7 +172,8 @@ class App < Sinatra::Base
 		post '/pet' do
 			protected!
 			json = json_params
-			pet = VirtualPet.new({"name" => json["name"], "user" => @user_id, "petType" => json["petType"]})
+			creator = UserModel.where({"_id" => @user_id}).first["username"]
+			pet = VirtualPet.new({"name" => json["name"], "user" => @user_id, "petType" => json["petType"], "creator" => creator})
 			{"id" => pet.id.to_s}.to_json
 		end
 
