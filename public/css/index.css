@@ -1,4 +1,4 @@
-.container {
+.my-container {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -14,19 +14,19 @@
     border-radius: 13px;
 }
  
-.form {
+.my-form {
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%) 
+    transform: translate(-50%, -50%);
 }
 
 .title {
     font-size: 26px;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 4px;
-    color: rgb(149, 146, 146);
+    color: rgb(89, 89, 89);
     margin-bottom: 150px;
 }
  
@@ -35,12 +35,12 @@
     top: 40px;
 }
 
-body {
+.my-body {
     margin: 0;
 }
  
 p {
-    font-size: 17px;
+    font-size: 17px; 
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 4px;
     color: rgb(149, 146, 146);
@@ -63,7 +63,7 @@ input {
     color: black;
 }
  
-.button {
+.my-button {
     border: 1px solid rgb(149, 146, 146);
     border-radius: 6px;
     outline: none;
@@ -170,7 +170,7 @@ input {
     font-size: 8px;
 }
  
-.button:hover {
+.my-button:hover {
     background-color: rgb(183, 182, 182);
     color: black;
 }
@@ -196,9 +196,9 @@ input {
 
 ::placeholder {
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+    font-size: 17px;
     margin-top: 3px;
-    color: rgb(149, 146, 146);
+    color: rgb(50, 49, 49);
 }
  
 .login {
@@ -229,7 +229,7 @@ a:link {
     border-radius:50%;
 }
 
-.list-group {
+.my-list-group {
     display:-ms-flexbox;
     display:block;
     overflow-x:auto;
@@ -246,7 +246,7 @@ a:link {
     max-height:421px;
 }
 
-.list-group-item {
+.my-list-group-item {
     position:relative;
     display:block;
     padding: 1.75rem 3.25rem;
@@ -297,7 +297,7 @@ a:link {
     text-overflow: ellipsis;
 }
 
-.col {
+.my-col {
     -ms-flex-preferred-size:0;
     flex-basis:0;
     -ms-flex-positive:1;
@@ -306,7 +306,7 @@ a:link {
     height: 50px;
 }
 
-.row {
+.my-row {
     display:-ms-flexbox;
     display:flex;
     -ms-flex-wrap:wrap;
@@ -387,7 +387,6 @@ progress {
     border: 0;
     height: 5px;
     width: 80px;
- 
 }
  
 progress::-webkit-progress-bar {
@@ -471,4 +470,21 @@ progress::-moz-progress-bar {
     background-color: rgb(72, 71, 71);
     box-shadow: 2px 5px  rgb(42, 41, 41);
     max-height: 361px;
+}
+
+.food{
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.list-food{
+    position: relative;
+    bottom: 15px;
+    padding: 6px 4px 6px 4px;
+    background-color: rgba(203, 208, 216, 0.5);
+    width: 116px;
+    height:19px;
+    border-radius: 8px;
 }

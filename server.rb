@@ -12,9 +12,7 @@ require_relative './models/virtualpetmodel'
 class App < Sinatra::Base
 	register Sinatra::Namespace
 	set :sessions => true
-
 	set :session_secret, '1V[C1x`9p%k~L_5m*n@!Ma:/Jzs{)F~4u{I`}2o`CgjUr<!60)3\')GOJA+e1U5`' 
-
 	helpers do
 		def json_params
 			begin
