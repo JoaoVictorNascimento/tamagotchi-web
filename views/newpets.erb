@@ -3,12 +3,13 @@
     <body>
         <div class="my-container">
                 <img src="images/index.gif" class="gif">
-                        <center class="my-form">
-                        <a class="title">Criar Pet</a>
+                        <center class="my-form1">
+                        <a class="title-index">Criar Pet</a>
+                        <a class="button-exit" href='/menu'><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
                         </br>
                         <div>
                          <label for="nome"><p class="label_pet">Digite o nome do seu Pet</p></label>
-                            <input id=nome type="text" placeholder="Nome do Pet">
+                            </br><input id=nome type="text" placeholder="Nome do Pet">
                         </div>
                         </br>
                          <p class="input_ṕet">Selecione o seu Pet</p>
@@ -19,8 +20,9 @@
                             <img src="images/gengarV1.gif" class="gif_pet select_pet" onClick="select(this)" id="gengar">
                             <img src="images/treeckoV1.gif" class="gif_pet select_pet" onClick="select(this)" id="treecko">
                          </div>
-                         </br>
-                           <button type="" class="my-button" onClick="createPet()">Criar</button>  
+                         <div>
+                           <button type="button" class="my-button-form" onClick="createPet()">Criar</button></br>  
+                        </div>
             <center>
         </div>
         <script type="text/javascript" src="js/newpets.js"></script>

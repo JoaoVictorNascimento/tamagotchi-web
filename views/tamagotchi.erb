@@ -4,6 +4,7 @@
         <div class="my-container">
             <img src="images/ambient.gif" class="gif">
                 <center class="my-form">
+                <a class="button-exit-tamagotchi" href=''><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i></a>
                     <div class="div-status-bar">
                     <ul class="status-bar">
                         <li class="status">
@@ -30,7 +31,7 @@
                     </div>
                     <img class="gif-tamagotchi" id="pet">
                      <div class="div-buttons">
-                        <button class="button-circle" id="food"><i class="fa fa-cutlery fa-lg" aria-hidden="true"></i></button>
+                        <button class="button-circle" id="food" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."><i class="fa fa-cutlery fa-lg" aria-hidden="true"></i></button>
                         <button class="button-circle"><i class="fa fa-bath fa-lg" aria-hidden="true"></i></button>
                         <button class="button-circle"><i class="fa fa-bed fa-lg" aria-hidden="true"></i></button>
                       <a href='/menu'><button class="button-circle-menu"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></button></a>
@@ -38,11 +39,6 @@
                         <button class="button-circle"><i class="fa fa-info fa-lg" aria-hidden="true"></i></button>
                         <button onclick="control_sound()" class="button-circle"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
                     </div>
-                        <div id="list-food" class="list-food">
-                            <img class="food"src="images/1.png">
-                            <img class="food"src="images/2.png">
-                            <img class="food"src="images/3.jpg">
-                        </div>
                 <center>
         </div>
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>

@@ -34,3 +34,7 @@ $(document).ready(function () {
         console.log(err)
     })
 });
+
+$(function () {
+    $('[data-toggle="popover"]').popover()
+  })

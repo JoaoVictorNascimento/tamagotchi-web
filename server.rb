@@ -153,9 +153,15 @@ class App < Sinatra::Base
 			end
 		end
 
+<<<<<<< HEAD
 		# POST api/logout
 		post "/logout" do
+=======
+
+		get '/logout' do
+>>>>>>> 81927b908b15c3fd8e226d0ff4db08253781734f
 			session["access_token"] = nil
+			redirect '/login'
 		end
 		# END HERE
 
