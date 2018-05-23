@@ -31,7 +31,7 @@ $(document).ready(function () {
         $('#hunger').val(data.hunger)
         $('#energy').val(data.tiredness)
         $('#higiene').val(data.higiene)
-        $('#pet').attr("src", "images/" + data.petType + ".gif");
+        $('#pet').attr("src", "images/" + data.petType + data.stage + ".gif");
         console.log( $('#pet'))
         update()
     }).catch(function (err) {

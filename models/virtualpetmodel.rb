@@ -7,6 +7,7 @@ class VirtualPetModel
 	field :user, type: BSON::ObjectId
 	field :creator, type: String
 	field :petType, type: String
+	field :stage, type: String
 	field :name, type: String
 	field :happy, type: Float
 	field :tiredness, type: Float

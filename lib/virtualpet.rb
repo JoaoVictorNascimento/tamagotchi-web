@@ -3,7 +3,7 @@ require_relative '../models/virtualpetmodel'
 
 class VirtualPet
 	attr_accessor :id, :name, :petType, :happy, :health, :hunger, :tiredness, :user, :creator,
-				  :higiene, :birthday, :age, :state, :weight, :lastTime, :sleeping
+				  :higiene, :birthday, :age, :state, :weight, :lastTime, :sleeping, :stage
 	
 	def initialize(args)
 		unless args['id'].nil?
@@ -12,6 +12,7 @@ class VirtualPet
 			@user = pet['user'].to_s
 			@creator = pet['creator'].to_s
 			@petType = pet['petType'].to_s
+			@stage = pet['stage'].to_s
 			@happy = pet['happy'].to_f
 			@health = pet['health'].to_f
 			@tiredness = pet['tiredness'].to_f
@@ -55,6 +56,13 @@ class VirtualPet
 				@petType = 1
 			end
 			newPet['petType'] = @petType
+
+			unless args['stage'].nil?
+				@stage = args['stage']
+			else
+				@stage = 1
+			end
+			newPet['stage'] = @stage
 
 			unless args['happy'].nil?
 				@happy = args['happy']
@@ -446,7 +454,19 @@ class VirtualPet
 			end
 		end
 		@age = days_between = (Date.parse(Time.now.to_s) - Date.parse(@birthday.to_s)).round
+		
 		updatePet['age'] = @age
+
+		if @age < 4
+			@stage = 'V1'
+		elsif @age < 10
+			@stage = 'V2'
+		else
+			@stage = 'V3'
+		end
+
+		updatePet['stage'] = @stage
+
 		checkState()
 		updatePet['state'] = @state
 		VirtualPetModel.where({'_id': @id}).first.update(updatePet)
@@ -509,5 +529,10 @@ class VirtualPet
 	def sleep()
 		@sleeping = !@sleeping
 		VirtualPetModel.where({'_id': @id}).first.update({"sleeping" => @sleeping})
+	end
+
+	def updateName(name)
+		@name = name
+		VirtualPetModel.where({'_id': @id}).first.update({"name" => @name})
 	end
 end

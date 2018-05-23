@@ -159,6 +159,7 @@ class App < Sinatra::Base
 				"user" => pet.user,
 				"health" => pet.health, 
 				"petType" => pet.petType,
+				"stage" => pet.stage,
 				"happy" => pet.happy,
 				"hunger" => pet.hunger,
 				"higiene" => pet.higiene,
@@ -179,6 +180,15 @@ class App < Sinatra::Base
 			{"id" => pet.id.to_s}.to_json
 		end
 
+		put '/pet/:id/name' do |id|
+			protected!
+			pet = VirtualPet.new('id' => id)
+			pet.updateName(json_params['name'])
+			{
+				"name" => pet.name
+			}.to_json
+		end
+
 		put '/pet/:id/feed' do |id|
 			protected!
 			value = json_params['value']
@@ -189,6 +199,7 @@ class App < Sinatra::Base
 				"user" => pet.user,
 				"health" => pet.health, 
 				"petType" => pet.petType,
+				"stage" => pet.stage,
 				"happy" => pet.happy,
 				"hunger" => pet.hunger,
 				"higiene" => pet.higiene,
@@ -211,6 +222,7 @@ class App < Sinatra::Base
 				"user" => pet.user,
 				"health" => pet.health, 
 				"petType" => pet.petType,
+				"stage" => pet.stage,
 				"happy" => pet.happy,
 				"hunger" => pet.hunger,
 				"higiene" => pet.higiene,
@@ -233,6 +245,7 @@ class App < Sinatra::Base
 				"user" => pet.user,
 				"health" => pet.health, 
 				"petType" => pet.petType,
+				"stage" => pet.stage,
 				"happy" => pet.happy,
 				"hunger" => pet.hunger,
 				"higiene" => pet.higiene,
@@ -255,6 +268,7 @@ class App < Sinatra::Base
 				"user" => pet.user,
 				"health" => pet.health, 
 				"petType" => pet.petType,
+				"stage" => pet.stage,
 				"happy" => pet.happy,
 				"hunger" => pet.hunger,
 				"higiene" => pet.higiene,
@@ -277,6 +291,7 @@ class App < Sinatra::Base
 				"user" => pet.user,
 				"health" => pet.health, 
 				"petType" => pet.petType,
+				"stage" => pet.stage,
 				"happy" => pet.happy,
 				"hunger" => pet.hunger,
 				"higiene" => pet.higiene,
