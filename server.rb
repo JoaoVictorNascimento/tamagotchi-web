@@ -134,8 +134,9 @@ class App < Sinatra::Base
 		end
 
 
-		get "/logout" do
+		get '/logout' do
 			session["access_token"] = nil
+			redirect '/login'
 		end
 
 		get '/pets' do

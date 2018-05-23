@@ -7,7 +7,7 @@ $(document).ready(function () {
                 '<li class="my-list-group-item" id='+ pet._id.$oid +' onClick="choosePet(this)">' +
                     '<div class="my-row">'+
                         '<div class="my-col infopet-gif">' +
-                            '<img src="images/' + pet.petType + pet.stage + '.gif" class="gif_pet">' +
+                            '<img src="images/' + pet.petType + pet.stage + '.gif" class="gif_pet1">' +
                         '</div>' +
                         '<div class="my-col infopet">' +
                             '<a>'+pet.name+'</a>' +
