@@ -485,7 +485,7 @@ class VirtualPet
 		end
 	end
 
-	def cleen(value)
+	def clean(value)
 		unless @sleeping
 			updatePet = Hash.new
 			value = @higiene + value

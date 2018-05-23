@@ -4,6 +4,7 @@ require "jwt"
 require "bcrypt"
 
 require_relative './lib/virtualpet'
+require_relative './lib/minigames'
 require_relative './config/config_database'
 require_relative './models/usersmodel'
 require_relative './models/virtualpetmodel'
@@ -13,7 +14,9 @@ class App < Sinatra::Base
 	register Sinatra::Namespace
 	set :sessions => true
 	set :session_secret, '1V[C1x`9p%k~L_5m*n@!Ma:/Jzs{)F~4u{I`}2o`CgjUr<!60)3\')GOJA+e1U5`' 
+	
 	helpers do
+		# get all params on requisition's body
 		def json_params
 			begin
 				JSON.parse(request.body.read)
@@ -22,11 +25,13 @@ class App < Sinatra::Base
 			end
 		end
 
+		# user's need to be logged in
 		def protected!
 			return if authorized?
 			redirect to('/')
 		end
 
+		# get user's auth token
 		def extract_token
 			# check for the access_token header
 			if request.env["HTTP_ACCESS_TOKEN"]
@@ -42,6 +47,7 @@ class App < Sinatra::Base
 			return nil
 		end
 
+		# check if user is auth
 		def authorized?
 			@token = extract_token
 			begin
@@ -55,48 +61,61 @@ class App < Sinatra::Base
 		end
 	end
 	
-
+	# login page
 	get '/' do
 		@titulo = 'TAMAGOTCHI'
 		erb :index
 	end
 
+	# menu page
 	get '/menu' do
 		protected!
 		erb :menu 
-	  end 
+	end 
 	 
+	# WHY??
 	post '/menu' do
 		protected!
 		redirect '/menu' 
 	end 
 	 
+	# main game page
 	get '/tamagotchi' do
 		protected!
+		mg = MiniGames.new
+		mg.jankenpo(1)
 		erb :tamagotchi 
 	end 
 	 
+	# create new pet
 	get '/newpets' do
 		protected! 
 		erb :newpets 
 	end 
 	 
+	# select an existent pet
 	get '/mypets' do
 		protected! 
 		erb :mypets 
 	end 
 	 
+	# ranking page
 	get'/ranking' do
 		protected! 
 		erb :ranking 
 	end 
 	
+	# singnup page
 	get '/signup' do
 		erb :signup
 	end
 
 	namespace '/api' do
 
+		# USER ROUTES
+		# BEGIN HERE
+
+		# POST api/createuser to create a new user
 		post '/createuser' do
 			json = json_params
 			username = json['username']
@@ -110,6 +129,7 @@ class App < Sinatra::Base
 			end
 		end
 
+		# POST api/login
 		post '/login' do
 			json = json_params
 			username = json['username']
@@ -133,21 +153,28 @@ class App < Sinatra::Base
 			end
 		end
 
-
-		get "/logout" do
+		# POST api/logout
+		post "/logout" do
 			session["access_token"] = nil
 		end
+		# END HERE
 
+		# PETS ROUTES
+		# BEGIN HERE
+
+		# GET api/pets
 		get '/pets' do
 			protected!
 			VirtualPetModel.where({}).to_json
 		end
 
+		# GET api/userpets
 		get '/userpets' do
 			protected!
 			VirtualPetModel.where({"user" => BSON::ObjectId(@user_id)}).to_json
 		end
 
+		# GET api/pet/:id
 		get '/pet/:id' do |id|
 			protected!
 			pet = VirtualPet.new({'id' => id})
@@ -170,6 +197,7 @@ class App < Sinatra::Base
 			}.to_json
 		end
 
+		# POST api/pet
 		post '/pet' do
 			protected!
 			json = json_params
@@ -178,6 +206,7 @@ class App < Sinatra::Base
 			{"id" => pet.id.to_s}.to_json
 		end
 
+		# PUT api/pet/:id/name
 		put '/pet/:id/name' do |id|
 			protected!
 			pet = VirtualPet.new('id' => id)
@@ -187,6 +216,7 @@ class App < Sinatra::Base
 			}.to_json
 		end
 
+		# PUT api/pet/:id/feed
 		put '/pet/:id/feed' do |id|
 			protected!
 			value = json_params['value']
@@ -210,11 +240,12 @@ class App < Sinatra::Base
 			}.to_json
 		end
 
-		put '/pet/:id/cleen' do |id|
+		# PUT api/pet/:id/clean		
+		put '/pet/:id/clean' do |id|
 			protected!
 			value = json_params['value']
 			pet = VirtualPet.new({'id' => id})
-			pet.cleen(value)
+			pet.clean(value)
 			{
 				"name" => pet.name, 
 				"user" => pet.user,
@@ -233,6 +264,7 @@ class App < Sinatra::Base
 			}.to_json
 		end
 
+		# PUT api/pet/:id/play		
 		put '/pet/:id/play' do |id|
 			protected!
 			value = json_params['value']
@@ -256,6 +288,7 @@ class App < Sinatra::Base
 			}.to_json
 		end
 
+		# PUT api/pet/:id/heal		
 		put '/pet/:id/heal' do |id|
 			protected!
 			value = json_params['value']
@@ -279,6 +312,7 @@ class App < Sinatra::Base
 			}.to_json
 		end
 
+		# PUT api/pet/:id/sleep		
 		put '/pet/:id/sleep' do |id|
 			protected!
 			value = json_params['value']
@@ -301,5 +335,17 @@ class App < Sinatra::Base
 				"weigh" => pet.weight
 			}.to_json
 		end
+		# END HERE
+
+		# MINIGAME ROUTES
+		# BEGIN HERE
+
+		# api/minigame/jankenpo
+		post '/minigame/jankenpo' do
+			protected!
+			minigame = MiniGames.new
+			minigame.jankenpo(json_params['jankenpo']).to_json
+		end
+		# END HERE
 	end
 end

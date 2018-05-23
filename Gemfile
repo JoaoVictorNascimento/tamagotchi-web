@@ -21,3 +21,6 @@ gem "jwt", "~> 2.1"
 
 # Added at 2018-05-20 16:10:59 -0300 by igornfaustino:
 gem "bcrypt", "~> 3.1"
+
+# Added at 2018-05-23 13:05:48 -0300 by igornfaustino:
+gem "rerun", "~> 0.13.0"
