@@ -4,12 +4,12 @@ $(document).ready(function () {
         data.forEach(pet => {
             console.log(pet)
             $('#pets ul').append(
-                '<li class="list-group-item" id='+ pet._id.$oid +' onClick="choosePet(this)">' +
-                    '<div class="row">'+
-                        '<div class="col infopet-gif">' +
+                '<li class="my-list-group-item" id='+ pet._id.$oid +' onClick="choosePet(this)">' +
+                    '<div class="my-row">'+
+                        '<div class="my-col infopet-gif">' +
                             '<img src="images/' + pet.petType + pet.stage + '.gif" class="gif_pet">' +
                         '</div>' +
-                        '<div class="col infopet">' +
+                        '<div class="my-col infopet">' +
                             '<a>'+pet.name+'</a>' +
                             '</br>' +
                             '<a>'+pet.state+'</a>' +

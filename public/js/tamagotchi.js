@@ -4,10 +4,6 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function mute() {
-    $('#into').muted = true;
-}
-
 // TODO update values on screen
 // TODO save pet id
 async function update() {

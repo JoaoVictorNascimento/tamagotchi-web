@@ -3,15 +3,16 @@
   <head>
     <meta charset='UTF-8' />
     <title>Tamagotchi</title>
-    <link href='css/index.css' type="text/css" rel='stylesheet' />
-     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/index.css" type="text/css" rel='stylesheet'/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+    <audio id="into" src="music/into.mp3" autoplay loop></audio>
   </head>
-  <body class='container'></body>
+  <body class='my-container'></body>
   <img src="images/background.jpg" class="wallpaper">
     <%= yield %>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script src="js/axios.min.js"></script>
-     <audio id="into" src="music/into.mp3" autoplay loop>
   </body>
 </html>
