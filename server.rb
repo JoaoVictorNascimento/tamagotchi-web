@@ -156,7 +156,7 @@ class App < Sinatra::Base
 		# POST api/logout
 		post "/logout" do
 			session["access_token"] = nil
-			redirect '/login'
+			"session end"
 		end
 		# END HERE
 
@@ -316,7 +316,6 @@ class App < Sinatra::Base
 		# PUT api/pet/:id/sleep		
 		put '/pet/:id/sleep' do |id|
 			protected!
-			value = json_params['value']
 			pet = VirtualPet.new({'id' => id})
 			pet.sleep()
 			{

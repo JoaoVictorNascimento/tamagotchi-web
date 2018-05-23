@@ -473,33 +473,35 @@ class VirtualPet
 	end
 
 	def feed(value)
-		unless @sleeping
+		puts "oi"
+		unless @sleeping == 'true' || @sleeping == true
+			puts value
 			updatePet = Hash.new
 			value = @hunger + value
 			updatePet['hunger'] = @hunger = (value < 100) ? value : 100
 			value = @weight + value/100.0
 			updatePet['weight'] = @weight = (value < 100) ? value : 100
 			checkState()
-			update['state'] = @state
+			updatePet['state'] = @state
 			VirtualPetModel.where({'_id': @id}).first.update(updatePet)
 		end
 	end
 
 	def clean(value)
-		unless @sleeping
+		unless @sleeping == 'true' || @sleeping == true
 			updatePet = Hash.new
 			value = @higiene + value
 			updatePet['higiene'] = @higiene = (value < 100) ? value : 100
 			value = @health + value/4
 			updatePet['health'] = @health = (value < 100) ? value : 100
 			checkState()
-			update['state'] = @state
+			updatePet['state'] = @state
 			VirtualPetModel.where({'_id': @id}).first.update(updatePet)
 		end
 	end
 
 	def play(value)
-		unless @sleeping
+		unless @sleeping == 'true' || @sleeping == true
 			updatePet = Hash.new
 			value = @happy + value
 			updatePet['happy'] = @happy = (value < 100) ? value : 100
@@ -508,26 +510,30 @@ class VirtualPet
 			value = @weight - value/100
 			updatePet['weight'] = @weight = (value < 100) ? value : 100
 			checkState()
-			update['state'] = @state
+			updatePet['state'] = @state
 			VirtualPetModel.where({'_id': @id}).first.update(updatePet)
 		end
 	end
 
 	def heal(value)
-		unless @sleeping
+		unless @sleeping == 'true' || @sleeping == true
 			updatePet = Hash.new
 			value = @health + value
 			updatePet['health'] = @health = (value < 100) ? value : 100
 			value = @happy + value/4
 			updatePet['happy'] = @happy = (value < 100) ? value : 100
 			checkState()
-			update['state'] = @state
+			updatePet['state'] = @state
 			VirtualPetModel.where({'_id': @id}).first.update(updatePet)
 		end
 	end
 
 	def sleep()
-		@sleeping = !@sleeping
+		if @sleeping == 'true' || @sleeping == true
+			@sleeping = 'false'
+		else
+			@sleeping = 'true'
+		end
 		VirtualPetModel.where({'_id': @id}).first.update({"sleeping" => @sleeping})
 	end
 
