@@ -22,12 +22,12 @@ $(document).ready(function () {
         })
         data.forEach(pet => {
             $('#pets ul').append(
-                '<li class="list-group-item" id=' + pet._id.$oid + '>' +
-                    '<div class="row">' +
-                        '<div class="col image-pet-ranked">' +
+                '<li class="my-list-group-item" id=' + pet._id.$oid + '>' +
+                    '<div class="my-row">' +
+                        '<div class="my-col image-pet-ranked">' +
                             '<img src="images/' + pet.petType + '.gif" class="gif_pet">' +
                         '</div>' +
-                        '<div class="col infopet-ranking">'+
+                        '<div class="my-col infopet-ranking">'+
                             '<a>Nome: '+ pet.name +'</a></br>'+
                             '<a>Idade: '+ pet.age +' dias</a></br >'+
                             '<a>Criador: ' + pet.creator + '</a></br>' +
