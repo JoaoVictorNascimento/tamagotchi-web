@@ -29,7 +29,7 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
     width: 604px;
-    height: 500px;
+    height: 604px;
     border-radius: 15px;
     opacity: 0.8;
     background-color: black;
@@ -49,7 +49,7 @@
     letter-spacing: 4px;
     color: white !important;
     position: relative;
-    top: 40px;
+    top: 30px;
     left: 15px;
 
 }
@@ -348,7 +348,7 @@ input {
 }
  
 .label_pet {
-    margin-top: 100px;
+    margin-top: 50px
 }
 
 .input_pet {
@@ -430,6 +430,12 @@ a{
 .gif_pet1 {
     margin-right: 23px;
     margin-left: 12px;
+    width:53px;
+}
+
+.gif_pet2 {
+    margin-right: 48px;
+    margin-left: 42px;
     width:53px;
 }
 
