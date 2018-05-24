@@ -306,24 +306,20 @@ input {
 .button-exit-pet {
     outline: none;
     position: relative;
-    top: -135px;
-    left: 320px;
     color:#212529 !important;
 }
 
 .button-exit-pets{
     outline: none;
     position: relative;
-    top: -126px;
-    left: 320px;
     color:#212529 !important;
 }
 
 .button-exit-tamagotchi{
     outline: none;
     position: relative;
-    top: -279px;
-    left: 320px;
+    top: -283px;
+    left: 357px;
     color:#2f2f30 !important;
     z-index: 1;
 }
@@ -334,6 +330,20 @@ input {
     top: -173px;
     left: 320px;
     color:#212529 !important;
+}
+
+.div-buttons-top{
+    position: absolute;
+    top: -217px;
+    left: 483px;
+    width: 55px;
+}
+
+.div-buttons-top1{
+    position: absolute;
+    top: -108px;
+    left: 605px;
+    width: 55px;
 }
 
 ::placeholder {
@@ -674,6 +684,7 @@ progress::-moz-progress-bar {
     letter-spacing: 4px;
     color: rgb(181, 176, 176) !important;
     bottom: -211px;
+    left: -18px;
     z-index: 2;
     font-size: 34px;
 }
