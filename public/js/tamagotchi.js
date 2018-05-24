@@ -54,6 +54,27 @@ $(document).ready(function () {
                 return $("#body-info").html();
             }
         });
+        $('#med').popover({
+            html : true,
+            trigger: 'focus',
+            title: function () {
+                return $("#header-med").html();
+            },
+            content: function() {
+                return $("#body-med").html();
+            }
+        });
+        $('#game').popover({
+            html : true,
+            trigger: 'focus',
+            title: function () {
+                return $("#header-game").html();
+            },
+            content: function() {
+                return $("#body-game").html();
+            }
+        });
+    
         document.getElementById("name").innerHTML = data.name;
         document.getElementById("name1").innerHTML = data.name;
         document.getElementById("state").innerHTML = data.state;

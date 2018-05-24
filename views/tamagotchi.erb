@@ -34,13 +34,13 @@
                     <img class="gif-sleeping" src="images/sleeping.gif" id="sleeping">
                     <a class="name-pet" id="name"></a>
                      <div class="div-buttons">
-                        <button class="button-circle" id="food" data-container="body" data-toggle="popover" data-placement="top"><i class="fa fa-cutlery fa-lg" aria-hidden="true"></i></button>
-                        <button class="button-circle"><i class="fa fa-bath fa-lg" aria-hidden="true"></i></button>
-                        <button class="button-circle" onClick="goSleep()"><i class="fa fa-bed fa-lg" aria-hidden="true"></i></button>
-                      <a href='/menu'><button class="button-circle-menu"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></button></a>
-                        <button class="button-circle"><i class="fa fa-gamepad fa-lg" aria-hidden="true"></i></button>
-                        <button class="button-circle" id="info" data-container="body" data-toggle="popover" data-placement="top"><i class="fa fa-info fa-lg" aria-hidden="true"></i></button>
-                        <button onclick="control_sound()" class="button-circle"><i class="fa fa-medkit" aria-hidden="true"></i></i></button>
+                        <button class="button-circle" id="food" data-container="body" data-toggle="popover" data-placement="top"><i class="fa fa-cutlery" aria-hidden="true"></i></button>
+                        <button class="button-circle" onClick="clean(30)"><i class="fa fa-bath" aria-hidden="true"></i></button>
+                        <button class="button-circle" onClick="goSleep()"><i class="fa fa-bed" aria-hidden="true"></i></button>
+                      <a href='/menu'><button class="button-circle-menu"><i class="fa fa-bars" aria-hidden="true"></i></button></a>
+                        <button class="button-circle" id="game" data-container="body" data-toggle="popover" data-placement="top"><i class="fa fa-gamepad" aria-hidden="true"></i></button>
+                        <button class="button-circle" id="info" data-container="body" data-toggle="popover" data-placement="top"><i class="fa fa-info" aria-hidden="true"></i></button>
+                        <button class="button-circle" id="med" data-container="body" data-toggle="popover" data-placement="top"><i class="fa fa-medkit" aria-hidden="true"></i></i></button>
                     </div>
                 <center>
                 <div id="header-info" class="collapse">
@@ -69,6 +69,30 @@
                         <img src="images/1.png" id="donuts" class="food" onclick="feed(10)" data-toggle="tooltip" data-placement="left" title="donuts">
                         <img src="images/2.png" id="pie" class="food" onclick="feed(20)" data-toggle="tooltip" data-placement="left" title="pie">
                         <img src="images/3.jpg" id="cake" class="food" onclick="feed(40)" data-toggle="tooltip" data-placement="left" title="cake">
+                    </div>
+                </div>
+                 <div id="header-med" class="collapse">
+                    <div class="header-pop">
+                        <a>MedKit</a>
+                    </div>
+                </div>
+                <div id="body-med" class="collapse">
+                    <div class="body-food">
+                        <img src="images/injection.gif" id="injection" class="food" onclick="heal(10)" data-toggle="tooltip" data-placement="left" title="injection">
+                        <img src="images/pill.png" id="pill" class="food" onclick="heal(20)" data-toggle="tooltip" data-placement="left" title="pill">
+                        <img src="images/sirup.gif" id="sirup.gif" class="food" onclick="heal(40)" data-toggle="tooltip" data-placement="left" title="sirup">
+                    </div>
+                </div>
+                 <div id="header-game" class="collapse">
+                    <div class="header-pop">
+                        <a>Mini-Game</a>
+                    </div>
+                </div>
+                <div id="body-game" class="collapse">
+                    <div class="body-game">
+                        <img src="images/coin.gif" id="injection" class="food" onclick="heal(10)" data-toggle="tooltip" data-placement="left" title="injection">
+                        <img src="images/pill.png" id="pill" class="food" onclick="heal(20)" data-toggle="tooltip" data-placement="left" title="pill">
+                        <img src="images/sirup.gif" id="sirup.gif" class="food" onclick="heal(40)" data-toggle="tooltip" data-placement="left" title="sirup">
                     </div>
                 </div>
         </div>
