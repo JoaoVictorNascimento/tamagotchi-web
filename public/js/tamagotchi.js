@@ -54,7 +54,7 @@ $(document).ready(function () {
                 return $("#body-info").html();
             }
         });
-
+        document.getElementById("name").innerHTML = data.name;
         document.getElementById("name1").innerHTML = data.name;
         document.getElementById("state").innerHTML = data.state;
         document.getElementById("weight").innerHTML = data.weight;
