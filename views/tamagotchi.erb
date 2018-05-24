@@ -30,16 +30,45 @@
                     </ul>
                     </div>
                     <img class="gif-tamagotchi" id="pet">
+                    <a class="name-pet"id="name"></a>
                      <div class="div-buttons">
-                        <button class="button-circle" id="food" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."><i class="fa fa-cutlery fa-lg" aria-hidden="true"></i></button>
+                        <button class="button-circle" id="food" data-container="body" data-toggle="popover" data-placement="top"><i class="fa fa-cutlery fa-lg" aria-hidden="true"></i></button>
                         <button class="button-circle"><i class="fa fa-bath fa-lg" aria-hidden="true"></i></button>
                         <button class="button-circle"><i class="fa fa-bed fa-lg" aria-hidden="true"></i></button>
                       <a href='/menu'><button class="button-circle-menu"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></button></a>
                         <button class="button-circle"><i class="fa fa-gamepad fa-lg" aria-hidden="true"></i></button>
-                        <button class="button-circle"><i class="fa fa-info fa-lg" aria-hidden="true"></i></button>
+                        <button class="button-circle" id="info" data-container="body" data-toggle="popover" data-placement="top"><i class="fa fa-info fa-lg" aria-hidden="true"></i></button>
                         <button onclick="control_sound()" class="button-circle"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
                     </div>
                 <center>
+                <div id="header-info" class="collapse">
+                    <div class="header-pop">
+                        <a>Info</a>
+                    </div>
+                </div>
+                <div id="body-info" class="collapse">
+                    <a class="font-pop">Name:&nbsp;</a>
+                    <a class="font-pop"id="name1"></a></br>
+                    <a class="font-pop">Stage:&nbsp;</a>
+                    <a class="font-pop"id="state"></a></br>
+                    <a class="font-pop">Weight: &nbsp;</a>
+                    <a class="font-pop"id="weight"></a></br>
+                    <a class="font-pop">Age: &nbsp;</a>
+                    <a class="font-pop"id="age"></a>
+                    <a class="font-pop">Days</a>
+                </div>
+                <div id="header-food" class="collapse">
+                    <div class="header-pop">
+                        <a>Food</a>
+                    </div>
+                </div>
+                <div id="body-food" class="collapse">
+                    <div class="body-food">
+                        <img src="images/1.png" id="donuts" class="food" data-toggle="tooltip" data-placement="left" title="donuts">
+                        <img src="images/2.png" id="pie" class="food" data-toggle="tooltip" data-placement="left" title="pie">
+                        <img src="images/3.jpg" id="cake" class="food" data-toggle="tooltip" data-placement="left" title="cake">
+                    </div>
+                </div>
         </div>
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/tamagotchi.js"></script>

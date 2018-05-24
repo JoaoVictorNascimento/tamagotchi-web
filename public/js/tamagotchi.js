@@ -28,13 +28,35 @@ $(document).ready(function () {
         $('#energy').val(data.tiredness)
         $('#higiene').val(data.higiene)
         $('#pet').attr("src", "images/" + data.petType + data.stage + ".gif");
+        $('#food').popover({
+            html : true,
+            trigger: 'focus',
+            title: function () {
+                return $("#header-food").html();
+            },
+            content: function() {
+                return $("#body-food").html();
+            }
+        });
+        $('#info').popover({
+            html : true,
+            trigger: 'focus',
+            title: function () {
+                return $("#header-info").html();
+            },
+            content: function() {
+                return $("#body-info").html();
+            }
+        });
+
+        document.getElementById("name1").innerHTML = data.name;
+        document.getElementById("state").innerHTML = data.state;
+        document.getElementById("weight").innerHTML = data.weight;
+        document.getElementById("age").innerHTML = data.age;
+
         console.log( $('#pet'))
         update()
     }).catch(function (err) {
         console.log(err)
     })
 });
-
-$(function () {
-    $('[data-toggle="popover"]').popover()
-  })

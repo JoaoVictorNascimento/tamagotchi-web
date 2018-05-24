@@ -146,22 +146,22 @@ input {
 }
 
 .div-status-bar {
-    width: 700px;
-    height: 126px;
+    width: 701px;
+    height: 125px;
     background: linear-gradient(to top, rgba(255,0,0,0), rgb(109, 109, 109));
     border-radius: 13px;
     position: absolute;
-    top: -291px;
-    left: 1px;
+    top: -276px;
+    left: 0px;
 }
  
 .div-buttons {
-    width: 702px;
+    width: 701px;
     height: 100px;
     background: linear-gradient(to bottom, rgba(255,0,0,0), rgb(109, 109, 109));
     border-radius: 13px;
     position: relative;
-    bottom: -290px;
+    bottom: -275px;
 }
 
 .button-circle {
@@ -633,6 +633,24 @@ progress::-moz-progress-bar {
     margin-right: 8px;
 }
 
+.food:hover{
+    width: 20px;
+    height: 20px;
+    background-color: rgba(203, 208, 216, 0.5);
+    border-radius: 3px;
+    border: 1px solid rgba(137, 137, 137, 0.5);
+    padding: 3px;
+}
+
+.food:active{
+    width: 20px;
+    height: 20px;
+    background-color: rgba(203, 208, 216, 0.5);
+    border-radius: 3px;
+    border: 1px solid rgba(137, 137, 137, 0.5);
+    padding: 3px;
+}
+
 .list-food{
     position: relative;
     bottom: 15px;
@@ -642,3 +660,36 @@ progress::-moz-progress-bar {
     height:19px;
     border-radius: 8px;
 }
+
+.name-pet {
+    position: relative;
+    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+    color: rgb(181, 176, 176) !important;
+    bottom: -211px;
+    z-index: 2;
+    font-size: 34px;
+}
+
+.header-pop {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+.font-pop{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+.body-food{
+    display:-ms-flexbox !important;
+    display:block;
+    overflow-y:auto !important;
+    -webkit-overflow-scrolling:touch !important;
+    -ms-overflow-style:-ms-autohiding-scrollbar !important;
+    -ms-flex-direction:row !important;
+    flex-direction:row !important;
+    max-height: 50px;
+}
+
