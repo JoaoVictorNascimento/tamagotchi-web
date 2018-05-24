@@ -693,3 +693,11 @@ progress::-moz-progress-bar {
     max-height: 50px;
 }
 
+.gif-sleeping{
+    width: 210px;
+    height: 210px;
+    position: absolute;
+    right: 150px;
+    top: -120px;
+    display: none;
+}

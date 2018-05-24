@@ -30,11 +30,12 @@
                     </ul>
                     </div>
                     <img class="gif-tamagotchi" id="pet">
-                    <a class="name-pet"id="name"></a>
+                    <img class="gif-sleeping" src="images/sleeping.gif" id="sleeping">
+                    <a class="name-pet" id="name"></a>
                      <div class="div-buttons">
                         <button class="button-circle" id="food" data-container="body" data-toggle="popover" data-placement="top"><i class="fa fa-cutlery fa-lg" aria-hidden="true"></i></button>
                         <button class="button-circle"><i class="fa fa-bath fa-lg" aria-hidden="true"></i></button>
-                        <button class="button-circle"><i class="fa fa-bed fa-lg" aria-hidden="true"></i></button>
+                        <button class="button-circle" onClick="goSleep()"><i class="fa fa-bed fa-lg" aria-hidden="true"></i></button>
                       <a href='/menu'><button class="button-circle-menu"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></button></a>
                         <button class="button-circle"><i class="fa fa-gamepad fa-lg" aria-hidden="true"></i></button>
                         <button class="button-circle" id="info" data-container="body" data-toggle="popover" data-placement="top"><i class="fa fa-info fa-lg" aria-hidden="true"></i></button>
@@ -64,9 +65,9 @@
                 </div>
                 <div id="body-food" class="collapse">
                     <div class="body-food">
-                        <img src="images/1.png" id="donuts" class="food" data-toggle="tooltip" data-placement="left" title="donuts">
-                        <img src="images/2.png" id="pie" class="food" data-toggle="tooltip" data-placement="left" title="pie">
-                        <img src="images/3.jpg" id="cake" class="food" data-toggle="tooltip" data-placement="left" title="cake">
+                        <img src="images/1.png" id="donuts" class="food" onclick="feed(10)" data-toggle="tooltip" data-placement="left" title="donuts">
+                        <img src="images/2.png" id="pie" class="food" onclick="feed(20)" data-toggle="tooltip" data-placement="left" title="pie">
+                        <img src="images/3.jpg" id="cake" class="food" onclick="feed(40)" data-toggle="tooltip" data-placement="left" title="cake">
                     </div>
                 </div>
         </div>

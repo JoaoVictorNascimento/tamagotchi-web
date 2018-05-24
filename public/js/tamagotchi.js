@@ -15,11 +15,17 @@ async function update() {
     $('#hunger').val(data.hunger)
     $('#energy').val(data.tiredness)
     $('#higiene').val(data.higiene)
+    if(data.sleeping == 'true'){
+        $('#sleeping').show()
+    } else {
+        $('#sleeping').hide()
+    }
     await sleep(10000)
     update()
 }
 
 $(document).ready(function () {
+    $('#sleeping').hide()
     axios.get('api/pet/' + petId).then(function (res) {
         data = res.data
         $('#health').val(data.health)
@@ -113,6 +119,11 @@ function goSleep() {
     axios.put('api/pet/' + petId + '/sleep').then(function (res) {
         data = res.data
         console.log(data)
+        if(data.sleeping == 'true'){
+            $('#sleeping').show()
+        } else {
+            $('#sleeping').hide()
+        }
     }).catch(function (err) {
         console.log(err)
     })

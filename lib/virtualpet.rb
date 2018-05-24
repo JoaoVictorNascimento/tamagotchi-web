@@ -261,7 +261,7 @@ class VirtualPet
 			hungerRate = 2
 			higieneRate = 1
 			tirednessDownRate = 1
-			tirednessUpRate = 2
+			tirednessUpRate = 4
 
 			value = 0
 			value = @health - ((healthRate * randStatus.rand(0..0.0004)) * deltaTime).to_f
@@ -296,7 +296,7 @@ class VirtualPet
 			hungerRate = 3
 			higieneRate = 3
 			tirednessDownRate = 2
-			tirednessUpRate = 1
+			tirednessUpRate = 3
 
 			value = 0
 			value = @health - ((healthRate * randStatus.rand(0..0.0004)) * deltaTime).to_f
@@ -329,7 +329,7 @@ class VirtualPet
 			hungerRate = 1
 			higieneRate = 2
 			tirednessDownRate = 1
-			tirednessUpRate = 1
+			tirednessUpRate = 3
 
 			value = 0
 			value = @health - ((healthRate * randStatus.rand(0..0.0003)) * deltaTime).to_f
@@ -362,7 +362,7 @@ class VirtualPet
 			hungerRate = 0.5
 			higieneRate = 4
 			tirednessDownRate = 1
-			tirednessUpRate = 2
+			tirednessUpRate = 3
 
 			value = 0
 			value = @health - ((healthRate * randStatus.rand(0..0.0003)) * deltaTime).to_f
@@ -395,7 +395,7 @@ class VirtualPet
 			hungerRate = 3
 			higieneRate = 1
 			tirednessDownRate = 1
-			tirednessUpRate = 1
+			tirednessUpRate = 3
 
 			value = 0
 			value = @health - ((healthRate * randStatus.rand(0..0.0003)) * deltaTime)
@@ -427,7 +427,7 @@ class VirtualPet
 			hungerRate = 3
 			higieneRate = 2
 			tirednessDownRate = 3
-			tirednessUpRate = 1
+			tirednessUpRate = 2
 
 			value = 0
 			value = @health - ((healthRate * randStatus.rand(0..0.0003)) * deltaTime)
