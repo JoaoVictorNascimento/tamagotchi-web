@@ -1,6 +1,9 @@
 $(document).ready(function () {
     axios.get('api/userpets').then(function (res) {
         data = res.data
+        if(data.length > 0){
+            localStorage.setItem('petId', data[0]._id.$oid)
+        }
         data.forEach(pet => {
             console.log(pet)
             $('#pets ul').append(

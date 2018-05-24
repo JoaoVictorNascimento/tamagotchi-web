@@ -27,3 +27,11 @@ function createPet() {
         alert("Preencha podos os campos")
     }
 }
+
+$(document).ready(function () {
+    petId = localStorage.getItem('petId')
+    console.log(petId)
+    if (!petId){
+        $('#exit').hide()
+    }
+});

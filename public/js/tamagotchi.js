@@ -60,3 +60,60 @@ $(document).ready(function () {
         console.log(err)
     })
 });
+
+function feed(x) {
+    axios.put('api/pet/' + petId + '/feed', {
+        value: x
+    }).then(function (res) {
+        data = res.data
+        console.log(data)
+        $('#hunger').val(data.hunger)
+    }).catch(function (err) {
+        console.log(err)
+    })
+}
+
+function clean(x) {
+    axios.put('api/pet/' + petId + '/clean', {
+        value: x
+    }).then(function (res) {
+        data = res.data
+        console.log(data)
+        $('#higiene').val(data.higiene)
+    }).catch(function (err) {
+        console.log(err)
+    })
+}
+
+function play(x) {
+    axios.put('api/pet/' + petId + '/play', {
+        value: x
+    }).then(function (res) {
+        data = res.data
+        console.log(data)
+        $('#happy').val(data.happy)
+    }).catch(function (err) {
+        console.log(err)
+    })
+}
+
+function heal(x) {
+    axios.put('api/pet/' + petId + '/heal', {
+        value: x
+    }).then(function (res) {
+        data = res.data
+        console.log(data)
+        $('#health').val(data.health)
+    }).catch(function (err) {
+        console.log(err)
+    })
+}
+
+function goSleep() {
+    axios.put('api/pet/' + petId + '/sleep').then(function (res) {
+        data = res.data
+        console.log(data)
+    }).catch(function (err) {
+        console.log(err)
+    })
+}
