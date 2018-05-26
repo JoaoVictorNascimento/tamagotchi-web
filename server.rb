@@ -346,6 +346,23 @@ class App < Sinatra::Base
 			minigame = MiniGames.new
 			minigame.jankenpo(json_params['jankenpo']).to_json
 		end
+
+		post '/minigame/coin' do
+			protected!
+			minigame = MiniGames.new
+			minigame.coin(json_params['coin']).to_json
+		end
+
+		post '/minigame/battle/:id' do |id|
+			protected!
+			pokemon = VirtualPet.new({'id' => id})
+			minigame = MiniGames.new
+			json = json_params
+			{
+				'enemy' => minigame.battle(pokemon, json['enemy'], json['attack']),
+				'life' => pokemon.health
+			}.to_json
+		end
 		# END HERE
 	end
 end

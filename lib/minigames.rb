@@ -44,4 +44,46 @@ class MiniGames
             return GameStatus::INVALID
         end
     end
+
+    def coin(side)
+        rand = Random.new
+        fate = rand.rand(2)
+        if fate == side
+            return GameStatus::WIN
+        else
+            return GameStatus::LOSE
+        end
+    end
+
+    def battle(pokemon, enemy, attack)
+        rand = Random.new
+        if pokemon.stage == 'v1'
+            attackRate = 1
+        elsif pokemon.stage == 'v2'
+            attackRate = 1.4
+        else
+            attackRate = 1.8
+        end
+
+        if attack == 0 # normal attack
+            damage = rand.rand(10..20)
+            enemy -= damage * attackRate
+        else
+            miss = coin(1)
+            if miss != 1
+                damage = rand.rand(20..40)
+                enemy -= damage * attackRate
+            end
+        end
+
+        enemyDamage = rand.rand(20..60)
+        miss = coin(1)
+        if miss != 1
+            pokemon.health -= (damage * attackRate)
+            pokemon.save()
+        end
+
+        return enemy
+
+    end
 end
