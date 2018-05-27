@@ -110,6 +110,10 @@ class App < Sinatra::Base
 		erb :signup
 	end
 
+	get '/coin' do
+		erb :coin
+	end
+
 	namespace '/api' do
 
 		# USER ROUTES

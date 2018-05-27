@@ -149,3 +149,11 @@ function goSleep() {
         console.log(err)
     })
 }
+
+function coin(){
+        axios.get('coin').then(function () {
+            window.location.href = "/";
+        }).catch(function (err) {
+            console.log(err)
+        })
+}
