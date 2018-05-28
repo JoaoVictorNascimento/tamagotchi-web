@@ -13,14 +13,15 @@
                                <img id="coin" class="coin1" src="images/coin2.gif">
                                     
                                     <div class="div-button_coins">
-                                        <a class="result1">Head</a><br>
-                                        <a class="result1">Win</a><br>
-                                        <button type="button" class="my-button-form" openclick="select(this)" id="">Head</button>
-                                        <button type="button" class="my-button-form" openclick="select(this)" id="">Tails</button></br>
-                                        <button type="button" class="my-button-form" openclick="select(this)" id="">Play</button></br>
+                                        <a class="result1" id="number">0</a><br>
+                                        <a class="result1">Wins</a><br>
+                                        <button type="button" class="my-button-form" onclick="playCoin(this)" id="head">Head</button>
+                                        <button type="button" class="my-button-form" onclick="playCoin(this)" id="tail">Tails</button></br>
+                                        <%# <button type="button" class="my-button-form" openclick="select(this)" id="">Play</button></br> %>
                                     </div>
                             </div>
                     </center>
             </div>
         </div>
+        <script type="text/javascript" src="js/coin.js"></script>
     </body>

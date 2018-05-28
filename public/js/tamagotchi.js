@@ -150,10 +150,16 @@ function goSleep() {
     })
 }
 
-function coin(){
-        axios.get('coin').then(function () {
-            window.location.href = "/";
-        }).catch(function (err) {
-            console.log(err)
-        })
+async function coin(){
+    axios.put('api/pet/' + petId + '/play', {
+        value: 20
+    }).then(function (res) {
+        data = res.data
+        console.log(data)
+        $('#happy').val(data.happy)
+        window.location.href = "/coin";
+    }).catch(function (err) {
+        console.log(err)
+    })
+    // console.log('oi')
 }
