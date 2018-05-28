@@ -11,23 +11,23 @@
                     </div>
                     <div>
                         <img src="images/lucario.gif" class="lucario"/>
-                        <img src="images/togepi_backV3.gif" class="mypokemon"/>
+                        <img src="" class="mypokemon" id="myPoke"/>
                         <div class="div_status_lucario">
                             <a class="name_lucario">Lucario</a></br>
-                             <progress class="progress" value="50" max="100" id="lucario"></progress>
+                             <progress class="progress" value="150" max="150" id="lucario"></progress>
                         </div>
                         <div class="div_status_mypokemon">
-                            <a class="name_mypokemon">Treco</a></br>
-                            <progress class="progress_mypokemon" value="100" max="100" id="pokemon"></progress>
+                            <a class="name_mypokemon" id="pokeName"></a></br>
+                            <progress class="progress_mypokemon" value="100" max="100" id="pokemonLife"></progress>
                         </div>
                         <div class="div-button-battle">
-                            <button class="button-circle" id=""><i class="fa fa-cutlery" aria-hidden="true"></i></button>
-                            <button class="button-circle" onClick=""><i class="fa fa-bath" aria-hidden="true"></i></button>
+                            <button class="button-circle" onClick="attack(0)" id=""><i class="fa fa-cutlery" aria-hidden="true"></i></button>
+                            <button class="button-circle" onClick="attack(1)"><i class="fa fa-bath" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 <center>
         </div>
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="js/tamagotchi.js"></script>
+        <script type="text/javascript" src="js/battle.js"></script>
     </body>
 </html>
