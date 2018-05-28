@@ -261,6 +261,10 @@ class VirtualPet
 
 
 	def update()
+		if @state == 'dead'
+			return
+		end
+
 		randStatus = Random.new
 		updatePet = Hash.new
 		time = Time.now
