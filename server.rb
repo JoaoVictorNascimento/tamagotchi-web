@@ -114,6 +114,14 @@ class App < Sinatra::Base
 		erb :coin
 	end
 
+	get '/jakenpo' do
+		erb :jakenpo
+	end
+
+	get '/battle' do
+		erb :battle
+	end
+
 	namespace '/api' do
 
 		# USER ROUTES

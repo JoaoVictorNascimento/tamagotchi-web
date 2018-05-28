@@ -51,7 +51,6 @@
     position: relative;
     top: 30px;
     left: 15px;
-
 }
  
 .title-mypets {
@@ -78,12 +77,6 @@ p {
 a:link {
     color: rgb(255, 255, 255);
     text-decoration: none;
-}
-
-a:active {
-    color: green;
-    text-decoration: none;
-    border:none;
 }
 
 input {
@@ -717,4 +710,114 @@ progress::-moz-progress-bar {
     right: 150px;
     top: -120px;
     display: none;
+}
+
+.coin1 {
+    width: 100px;
+    height: 100px;
+    transition: transform 500ms ease-in-out;
+    position: relative;
+    top: 68px;
+}
+
+.coin1:active {
+    transform:  translate(0px,-180px)
+}
+
+.title_game{
+    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+    color: rgb(89, 89, 89);
+    margin-bottom: 150px;
+    position: absolute;
+    width: 480px;
+    top: -189px;
+    left: -184px;
+}
+
+.div-button_coins {
+    position: absolute;
+    bottom: -270px;
+    width: 160px;
+    left: -27%;
+}
+
+.lucario {
+    width: 100px;
+    height: 200px;
+    position: relative;
+    transition: transform 500ms ease-in-out;
+}
+
+.lucario:hover {
+    transform:  translate(0px,-150px)
+}
+
+.div_jakenpo {
+    position: absolute;
+    bottom: -221px;
+    width: 682px;
+    left: -196px;
+}
+
+.img_jakenpo{
+    width: 80px;
+    left: -27%;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.title_jakenpo{
+    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+    color: rgb(89, 89, 89);
+    margin-bottom: 150px;
+    position: absolute;
+    width: 480px;
+    top: -189px;
+    left: -93px;
+}
+
+.machine{
+    width: 80px;
+    left: -27%;
+    margin-left: 15px;
+    margin-right: 15px;
+    top: -109px;
+    left: 88px;
+    position: relative;
+}
+
+.result {
+    position: relative;
+    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+    color: rgb(89, 89, 89);
+    left: -42px;
+}
+
+.div-buttons-jakenpo {
+    position: absolute;
+    top: -276px;
+    left: 404px;
+    width: 55px;
+}
+
+.div-buttons-coins {
+    position: absolute;
+    top: -263px;
+    left: 315px;
+    width: 55px;
+}
+
+.result1 {
+    position: relative;
+    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+    color: rgb(89, 89, 89);
+    left: 0px;
 }

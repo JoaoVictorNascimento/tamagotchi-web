@@ -1,15 +1,24 @@
 <!DOCTYPE html>
      <body>
-        <div class="my-container">
+         <div class="my-container">
              <div class="box">
                     <center class="my-form">
-                    <a class="button-exit-menu" href='/tamagotchi'><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
-                    <a class="button-exit-menu" onClick="logout()"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i></a>
-                    <a class="button-exit-menu" onClick="mute()"><i class="fa fa-volume-off fa-lg" aria-hidden="true"></i></a>
+                   <div class="div-buttons-coins">
+                            <a class="button-exit-pet" href='/menu'><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
+                            <a class="button-exit-pet" onclick="logout()"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i></a>
+                            <a class="button-exit-pet" onclick="mute()"><i class="fa fa-volume-off fa-lg" aria-hidden="true"></i></a>
+                        </div>  
                             <div>
-                                <a class="title">Heads or Tails</a></br>
-                                </br>
-                               
+                                <a class="title_game">HEADS AND TAILS</a><br>
+                               <img id="coin" class="coin1" src="images/coin2.gif">
+                                    
+                                    <div class="div-button_coins">
+                                        <a class="result1">Head</a><br>
+                                        <a class="result1">Win</a><br>
+                                        <button type="button" class="my-button-form" openclick="select(this)" id="">Head</button>
+                                        <button type="button" class="my-button-form" openclick="select(this)" id="">Tails</button></br>
+                                        <button type="button" class="my-button-form" openclick="select(this)" id="">Play</button></br>
+                                    </div>
                             </div>
                     </center>
             </div>
