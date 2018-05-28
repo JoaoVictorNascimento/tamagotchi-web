@@ -1,28 +1,34 @@
 var wins = 0
 
-function movecoin(){
-    console.log("oi")
-    $("#coin").addClass('turncoin')
-}
 
 function playCoin(op){
     let coin 
+    $('#coin').addClass('coin1-active')
     if(op.id == 'head'){
         coin = 1
+        coins = "Head"
+        $('#coin2').text(coins)
+        $("#coin").removeClass('coin1-active')
     } else {
         coin = 0
+        coins = "Tails"
+        $('#coin2').text(coins)
+        $("#coin").removeClass('coin1-active')
     }
+    
     axios.post('api//minigame/coin', {
         coin: coin
     }).then(function (res) {
         data = res.data
         if (data > 0){
-            alert("YOU WIN")
+            win = "YOU WIN"
+            $('#result').text(win)
             wins += 1;
-            console.log(wins)
-            $('#number').text(wins)
+            $('#number').text('Victories: '+ wins)
         } else {
-            alert("YOU LOSE")
+            wins = 0;
+            lose = "YOU LOSE"
+            $('#result').text(lose)
         }
     })
 }
