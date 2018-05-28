@@ -552,33 +552,45 @@ label {
     color: rgb(40, 39, 39);
 }
 
-progress {
-    border: 0;
-    height: 5px;
-    width: 80px;
+.progress_tamagotchi {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 7px;
+    overflow: hidden;
+    font-size: .75rem;
+    top: 31px;
+    width: 74px;
+    background-color: #e9ecef;
+    border-radius: .25rem;
 }
  
-progress::-webkit-progress-bar {
-    border: 0;
-    height: 5px;
-    width: 60px;
-    color: rgb(91, 22, 22);
+.progress_tamagotchi::-webkit-progress-bar{
+    height: 1rem;
+    width: 74px;
+    margin:0 auto;
+	background-color: #CCC;
+	border-radius: .25rem;
+	box-shadow:0px 0px 6px #777 inset;
 }
 
-progress::-webkit-progress-value {
-    border: 0;
-    height: 5px;
-    width: 60px;
-    color: rgb(70, 70, 70);
- 
+.progress_tamagotchi::-webkit-progress-value{
+    height: 1rem;
+    display:inline-block;
+	float:left;
+    margin:0px -10px 0 0;
+	background: rgb(18, 181, 83);
+	border-radius: .25rem;
+	box-shadow:0px 0px 6px #777 inset;
 }
- 
-progress::-moz-progress-bar {
-    border: 0;
-    height: 5px;
-    width: 60px;
-    position: relative;
-    color: rgb(119, 22, 22);
+
+.progress_tamagotchi::after {
+    height: 1rem;
+    margin:-26px 0 0 -7px;
+	padding:0;
+	display:inline-block;
+	float: left;
+	content: attr(value) '%';
 }
 
  
