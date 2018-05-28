@@ -4,22 +4,23 @@
              <div class="box">
                     <center class="my-form">
                    <div class="div-buttons-jakenpo">
-                            <a class="button-exit-pet" href='/menu'><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
+                            <a class="button-exit-pet" href='/tamagotchi'><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
                             <a class="button-exit-pet" onClick="logout()"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i></a>
                             <a class="button-exit-pet" onClick="mute()"><i class="fa fa-volume-off fa-lg" aria-hidden="true"></i></a>
                         </div>  
                             <div>
                              <a class="title_jakenpo">JAKENPO</a></br>
-                                <img src="images/paper.gif" class="machine" onClick="select(this)" id="bulba">
-                                     <a class="result">You Win !!</a></br>
+                                <img src="" class="machine" id="enemyJank">
+                                     <a class="result" id="resultJank">Escolha sua jogada</a></br>
                                     <div class="div_jakenpo">
-                                         <img src="images/rock.gif" class="img_jakenpo" onClick="select(this)" id="bulba">
-                                          <img src="images/paper.gif" class="img_jakenpo" onClick="select(this)" id="bulba">
-                                           <img src="images/scissor.gif" class="img_jakenpo" onClick="select(this)" id="bulba"></br>
-                                             <button type="button" class="my-button-form" openClick="select(this)" id="">JAKENPO</button>
+                                        <img src="images/rock.gif" class="img_jakenpo select_pet" onClick="select(this)" id="rock">
+                                        <img src="images/paper.gif" class="img_jakenpo select_pet" onClick="select(this)" id="paper">
+                                        <img src="images/scissor.gif" class="img_jakenpo select_pet" onClick="select(this)" id="scissor"></br>
+                                        <button type="button" class="my-button-form" onClick="jakenpo()" id="">JAKENPO</button>
                                     </div>
                             </div>
                     </center>
             </div>
         </div>
+        <script type="text/javascript" src="js/jakenpo.js"></script>
     </body>
