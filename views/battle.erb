@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-     <body>
+<html>
+    <body>
         <div class="my-container">
-             <div class="box">
-                    <center class="my-form">
-                        <a class="title">PETS</a></br>
-                            <div class="div-buttons-top">
-                            <a class="button-exit-pets" href='/menu'><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
-                            <a class="button-exit-pets" onClick="logout()"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i></a>
-                            <a class="button-exit-pets" onClick="mute()"><i class="fa fa-volume-off fa-lg" aria-hidden="true"></i></a>
-                           </div>
-                            <div id="pets">
-                                <ul class="my-pets_list"> 
-                                </ul>
-                            </div>
-                          <a href='/newpets'><button type="button" class="btn-menu">Criar Pokemon</button></a></br>
-                    </center>
-            </div>
+            <img src="images/background_battle2.png" class="battle">
+                <center class="my-form">
+                    <div class="div_buttons-top-battle">
+                        <a class="button-exit-tamagotchi" href='/tamagotchi'><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
+                        <a class="button-exit-tamagotchi" onClick="logout()"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i></a>
+                        <a class="button-exit-tamagotchi" onClick="mute()"><i class="fa fa-volume-off fa-lg" aria-hidden="true"></i></a>
+                    </div>
+                    <div>
+                        <img src="images/lucario.gif" class="lucario"/>
+                        <img src="images/togepi_backV3.gif" class="mypokemon"/>
+                        <div class="div_status_lucario">
+                            <a class="name_lucario">Lucario</a></br>
+                             <progress class="progress" value="100" max="100" id="health"></progress>
+                        </div>
+                        <div class="div_status_mypokemon">
+                            <a class="name_mypokemon">Treco</a></br>
+                            <progress class="progress_mypokemon" value="100" max="100" id="health"></progress>
+                        </div>
+                        <div class="div-button-battle">
+                            <button class="button-circle" id=""><i class="fa fa-cutlery" aria-hidden="true"></i></button>
+                            <button class="button-circle" onClick=""><i class="fa fa-bath" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                <center>
         </div>
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="js/mypets.js"></script>
+        <script type="text/javascript" src="js/tamagotchi.js"></script>
     </body>
+</html>

@@ -13,6 +13,12 @@
     height: 700px;
     border-radius: 13px;
 }
+
+.battle {
+    width: 900px;
+    height: 600px;
+    border-radius: 20px;
+}
  
 .my-form {
     position: absolute;
@@ -744,14 +750,11 @@ progress::-moz-progress-bar {
 }
 
 .lucario {
-    width: 100px;
-    height: 200px;
-    position: relative;
-    transition: transform 500ms ease-in-out;
-}
-
-.lucario:hover {
-    transform:  translate(0px,-150px)
+    width: 108px;
+    height: 181px;
+    position: absolute;
+    left: 188px;
+    top: -97px;
 }
 
 .div_jakenpo {
@@ -820,4 +823,150 @@ progress::-moz-progress-bar {
     letter-spacing: 4px;
     color: rgb(89, 89, 89);
     left: 0px;
+}
+
+.mypokemon {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    right: 180px;
+    top: 51px;
+}
+
+.div_status_lucario{
+    position: absolute;
+    border: 1px solid rgba(86, 86, 86, 0.5);
+    background-color: rgba(208, 207, 207, 0.5);
+    /* background: linear-gradient(to bottom, rgba(255,0,0,0), rgb(109, 109, 109)); */
+    border-radius: 38px 0px 246px 38px;
+    width: 430px;
+    height: 57px;
+    top: -250px;
+    right: 8px;
+}
+
+.name_lucario{
+    position: relative;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    right: 171px;
+    top: 3px;
+}
+.div_buttons-top-battle{
+    position: relative;
+    left: 40px;
+    top: 9px;
+}
+
+.progress {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 1rem;
+    overflow: hidden;
+    font-size: .75rem;
+    background-color: #e9ecef;
+    left: 11px;
+    top: 31px;
+    width: 373px;
+    border-radius: .25rem;
+}
+
+.progress::-webkit-progress-bar{
+    height: 1rem;
+    width: 373px;
+    margin:0 auto;
+	background-color: #CCC;
+	border-radius: .25rem;
+	box-shadow:0px 0px 6px #777 inset;
+}
+
+.progress::-webkit-progress-value{
+    height: 1rem;
+    display:inline-block;
+	float:left;
+    margin:0px -10px 0 0;
+	background: rgb(181, 18, 18);
+	border-radius: 15px;
+	box-shadow:0px 0px 6px #777 inset;
+}
+
+.progress::after {
+    height: 1rem;
+    margin:-26px 0 0 -7px;
+	padding:0;
+	display:inline-block;
+	float:left;
+	content: attr(value) '%';
+}
+
+.div_status_mypokemon{
+    position: absolute;
+    border: 1px solid rgba(86, 86, 86, 0.5);
+    background-color: rgba(208, 207, 207, 0.8);
+    /* background: linear-gradient(to bottom, rgba(255,0,0,0), rgb(109, 109, 109)); */
+    border-radius: 0px 38px 38px 246px;
+    width: 430px;
+    height: 57px;
+    top: 223px;
+    left: 18px;
+}
+
+.name_mypokemon{
+    position: relative;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    left: 177px;
+    top: 3px;
+}
+
+.progress_mypokemon {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 1rem;
+    overflow: hidden;
+    font-size: .75rem;
+    background-color: #e9ecef;
+    left: 39px;
+    top: 31px;
+    width: 373px;
+    border-radius: .25rem;
+}
+
+.progress_mypokemon::-webkit-progress-bar{
+    height: 1rem;
+    width: 373px;
+    margin:0 auto;
+	background-color: #CCC;
+	border-radius: .25rem;
+	box-shadow:0px 0px 6px #777 inset;
+}
+
+.progress_mypokemon::-webkit-progress-value{
+    height: 1rem;
+    display:inline-block;
+	float:right;
+    margin:0px -10px 0 0;
+	background: rgb(0, 255, 94);
+	border-radius: 15px;
+	box-shadow:0px 0px 6px #777 inset;
+}
+
+.progress_mypokemon::after {
+    height: 1rem;
+    margin:-26px 0 0 -7px;
+	padding:0;
+	display:inline-block;
+	float: right;
+	content: attr(value) '%';
+}
+
+.div-button-battle{
+    position: absolute;
+    top: 213px;
+    right: -119px;
+    width: 500px;
 }
