@@ -8,6 +8,10 @@ $(document).ready(function () {
         $('#pokemonLife').val(data.health)
         $('#myPoke').attr("src", "images/" + data.petType + '_back' + data.stage + ".gif");
         $('#pokeName').text(data.name)
+        if(data.health <= 2){
+            alert("Seu pokemon está incapaz de lutar")
+            window.location.href = "/tamagotchi";
+        }
     }).catch(function (err) {
         console.log(err)
     })

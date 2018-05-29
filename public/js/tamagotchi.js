@@ -20,6 +20,11 @@ async function update() {
     } else {
         $('#sleeping').hide()
     }
+    document.getElementById("name").innerHTML = data.name;
+    document.getElementById("name1").innerHTML = data.name;
+    document.getElementById("state").innerHTML = data.state;
+    document.getElementById("weight").innerHTML = data.weight;
+    document.getElementById("age").innerHTML = data.age;
     await sleep(10000)
     update()
 }
@@ -158,6 +163,34 @@ async function coin(){
         console.log(data)
         $('#happy').val(data.happy)
         window.location.href = "/coin";
+    }).catch(function (err) {
+        console.log(err)
+    })
+    // console.log('oi')
+}
+
+async function jankenpo(){
+    axios.put('api/pet/' + petId + '/play', {
+        value: 30
+    }).then(function (res) {
+        data = res.data
+        console.log(data)
+        $('#happy').val(data.happy)
+        window.location.href = "/jakenpo";
+    }).catch(function (err) {
+        console.log(err)
+    })
+    // console.log('oi')
+}
+
+async function battle(){
+    axios.put('api/pet/' + petId + '/play', {
+        value: 20
+    }).then(function (res) {
+        data = res.data
+        console.log(data)
+        $('#happy').val(data.happy)
+        window.location.href = "/battle";
     }).catch(function (err) {
         console.log(err)
     })

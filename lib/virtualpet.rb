@@ -256,6 +256,24 @@ class VirtualPet
 			else
 				@state = 'normal'
 			end
+		elsif @state == 'fat'
+			if @health == 0 && @hunger == 0 && @higiene == 0 && @happy == 0 && @tiredness == 0
+				@state = 'dead'
+			elsif @health < 30
+				@state = 'sick'
+			elsif @hunger < 40
+				@state = 'hunger'
+			elsif @tiredness < 30
+				@state = 'tired'
+			elsif @higiene < 50
+				@state = 'dirty'
+			elsif @happy < 50
+				@state = 'sad' 
+			elsif @weight > 70
+				@state = 'fat'
+			else
+				@state = 'normal'
+			end
 		end
 	end
 
@@ -551,15 +569,15 @@ class VirtualPet
 		end
 	end
 
-	def play(value)
+	def play(x)
 		unless @sleeping == 'true' || @sleeping == true
 			updatePet = Hash.new
-			value = @happy + value
+			value = @happy + x
 			updatePet['happy'] = @happy = (value < 100) ? value : 100
-			value = @health + value/4
-			updatePet['health'] = @health = (value < 100) ? value : 100
-			value = @weight - value/100
-			updatePet['weight'] = @weight = (value < 100) ? value : 100
+			# value = @health + value/4
+			# updatePet['health'] = @health = (value < 100) ? value : 100
+			value = @weight - x/20
+			updatePet['weight'] = @weight = (value > 0) ? value : 0
 			checkState()
 			updatePet['state'] = @state
 			VirtualPetModel.where({'_id': @id}).first.update(updatePet)

@@ -66,19 +66,19 @@ class MiniGames
         end
 
         if attack == 0 # normal attack
-            damage = rand.rand(10..20)
+            damage = rand.rand(5..15)
             enemy -= damage * attackRate
         else
-            miss = coin(1)
-            if miss != 1
-                damage = rand.rand(20..40)
+            miss = rand.rand(0..3)
+            if miss != 0
+                damage = rand.rand(20..30)
                 enemy -= damage * attackRate
             end
         end
 
-        enemyDamage = rand.rand(20..60)
-        miss = coin(1)
-        if miss != 1
+        enemyDamage = rand.rand(5..40)
+        miss = rand.rand(0..3)
+        if miss != 0
             pokemon.health -= (damage * attackRate)
             pokemon.save()
         end
