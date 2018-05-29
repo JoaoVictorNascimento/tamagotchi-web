@@ -517,7 +517,7 @@ a{
     margin-top: 20px;
     margin-bottom: 15px;
     margin-left: 135px; 
-    overflow: hidden;
+    /* overflow: hidden; */
     text-overflow: ellipsis;
     width: 275px;
 }

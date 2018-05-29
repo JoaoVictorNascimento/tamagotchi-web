@@ -1,4 +1,5 @@
 let petId = localStorage.getItem('petId')
+let sleeping
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -17,8 +18,10 @@ async function update() {
     $('#higiene').val(data.higiene)
     if(data.sleeping == 'true'){
         $('#sleeping').show()
+        sleeping = true
     } else {
         $('#sleeping').hide()
+        sleeping = false
     }
     document.getElementById("name").innerHTML = data.name;
     document.getElementById("name1").innerHTML = data.name;
@@ -94,6 +97,9 @@ $(document).ready(function () {
 });
 
 function feed(x) {
+    if(isSleeping()){
+        return
+    }
     axios.put('api/pet/' + petId + '/feed', {
         value: x
     }).then(function (res) {
@@ -106,6 +112,9 @@ function feed(x) {
 }
 
 function clean(x) {
+    if(isSleeping()){
+        return
+    }
     axios.put('api/pet/' + petId + '/clean', {
         value: x
     }).then(function (res) {
@@ -118,6 +127,9 @@ function clean(x) {
 }
 
 function play(x) {
+    if(isSleeping()){
+        return
+    }
     axios.put('api/pet/' + petId + '/play', {
         value: x
     }).then(function (res) {
@@ -130,6 +142,9 @@ function play(x) {
 }
 
 function heal(x) {
+    if(isSleeping()){
+        return
+    }
     axios.put('api/pet/' + petId + '/heal', {
         value: x
     }).then(function (res) {
@@ -147,8 +162,10 @@ function goSleep() {
         console.log(data)
         if(data.sleeping == 'true'){
             $('#sleeping').show()
+            sleeping = true
         } else {
             $('#sleeping').hide()
+            sleeping = false
         }
     }).catch(function (err) {
         console.log(err)
@@ -156,6 +173,9 @@ function goSleep() {
 }
 
 async function coin(){
+    if(isSleeping()){
+        return
+    }
     axios.put('api/pet/' + petId + '/play', {
         value: 20
     }).then(function (res) {
@@ -170,6 +190,9 @@ async function coin(){
 }
 
 async function jankenpo(){
+    if(isSleeping()){
+        return
+    }
     axios.put('api/pet/' + petId + '/play', {
         value: 30
     }).then(function (res) {
@@ -184,6 +207,9 @@ async function jankenpo(){
 }
 
 async function battle(){
+    if(isSleeping()){
+        return
+    }
     axios.put('api/pet/' + petId + '/play', {
         value: 20
     }).then(function (res) {
@@ -195,4 +221,12 @@ async function battle(){
         console.log(err)
     })
     // console.log('oi')
+}
+
+function isSleeping(){
+    if(sleeping){
+        alert('Pokemon está dormindo')
+        return true
+    }
+    return false
 }
