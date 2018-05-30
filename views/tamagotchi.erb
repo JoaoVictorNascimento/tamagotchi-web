@@ -38,6 +38,7 @@
                         <button class="button-circle" onClick="clean(30)"><i class="fa fa-bath" aria-hidden="true"></i></button>
                         <button class="button-circle" onClick="goSleep()"><i class="fa fa-bed" aria-hidden="true"></i></button>
                       <a href='/menu'><button class="button-circle-menu"><i class="fa fa-bars" aria-hidden="true"></i></button></a>
+                        <button class="button-circle" id="store"  data-toggle="modal" data-target="#exampleModal"><i class="fas fa-store-alt"></i></button>
                         <button class="button-circle" id="game" data-container="body" data-toggle="popover" data-placement="top"><i class="fa fa-gamepad" aria-hidden="true"></i></button>
                         <button class="button-circle" id="info" data-container="body" data-toggle="popover" data-placement="top"><i class="fa fa-info" aria-hidden="true"></i></button>
                         <button class="button-circle" id="med" data-container="body" data-toggle="popover" data-placement="top"><i class="fa fa-medkit" aria-hidden="true"></i></i></button>
@@ -95,6 +96,241 @@
                         <a onClick="battle()"><img src="images/battle.gif" id="battle" class="food" data-toggle="tooltip" data-placement="left" title="Battle"></a>
                     </div>
                 </div>
+        </div> 
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <center>
+                    <h5 class="modal-title modal-center" id="exampleModalLabel">Store</h5>
+                    </center>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+               <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item active">
+                        <a class="nav-link " id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Food</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">MedKit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Pokemons</a>
+                    </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <ul class="list-group body-story">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col">
+                                           <a>Food</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>Name</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>Cost</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>Qnt</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img src="images/orange.gif" class="food">
+                                        </div>
+                                        <div class="col">
+                                            <a>Orange</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>50 $</a>
+                                        </div>
+                                        <div class="col">
+                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img src="images/fastfood.png" class="food">
+                                        </div>
+                                        <div class="col">
+                                            <a>Fast Food</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>150 $</a>
+                                        </div>
+                                        <div class="col">
+                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                        </div>
+                                     </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img src="images/japoneses_food.png" class="food">
+                                        </div>
+                                        <div class="col">
+                                            <a>Japoneses Food</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>450 $</a>
+                                        </div>
+                                        <div class="col">
+                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img src="images/pancake.gif" class="food">
+                                        </div>
+                                        <div class="col">
+                                            <a>Pancake</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>200 $</a>
+                                        </div>
+                                        <div class="col">
+                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img src="images/ramen.png" class="food">
+                                        </div>
+                                        <div class="col">
+                                            <a>Ramen</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>170 $</a>
+                                        </div>
+                                        <div class="col">
+                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                        </div>
+                                    </div>
+                                </li>
+                                 <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img src="images/rocombole.png" class="food">
+                                        </div>
+                                        <div class="col">
+                                            <a>Roulade</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>100 $</a>
+                                        </div>
+                                        <div class="col">
+                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                        </div>
+                                     </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                              <ul class="list-group body-story">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col">
+                                           <a>MedKit</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>Name</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>Cost</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>Qnt</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img src="images/bandaid.gif" class="food">
+                                        </div>
+                                        <div class="col">
+                                            <a>Band-Aid</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>30 $</a>
+                                        </div>
+                                        <div class="col">
+                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img src="images/potion1.png" class="food">
+                                        </div>
+                                        <div class="col">
+                                            <a>Super Elixir</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>150 $</a>
+                                        </div>
+                                        <div class="col">
+                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                        </div>
+                                     </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img src="images/potion2.png" class="food">
+                                        </div>
+                                        <div class="col">
+                                            <a>Mega Elixir</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>300 $</a>
+                                        </div>
+                                        <div class="col">
+                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img src="images/potion3.png" class="food">
+                                        </div>
+                                        <div class="col">
+                                            <a>Ultra Elixir</a>
+                                        </div>
+                                        <div class="col">
+                                            <a>450 $</a>
+                                        </div>
+                                        <div class="col">
+                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                             <p>siajsao ijsao ijsaoisa</p>
+                        </div>
+                    </div>
+                <div class="modal-footer">
+                    <a class="cost">Cost: 150$</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel Buy</button>
+                    <button type="button" class="btn btn-primary">Buy</button>
+                </div>
+                </div>
+            </div>
         </div>
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/tamagotchi.js"></script>

@@ -85,7 +85,11 @@ $(document).ready(function () {
                 return $("#body-game").html();
             }
         });
-    
+        
+        $('#exampleModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
+
         document.getElementById("name").innerHTML = data.name;
         document.getElementById("name1").innerHTML = data.name;
         document.getElementById("state").innerHTML = data.state;
