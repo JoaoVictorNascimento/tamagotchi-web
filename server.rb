@@ -111,15 +111,23 @@ class App < Sinatra::Base
 	end
 
 	get '/coin' do
+		protected! 
 		erb :coin
 	end
 
 	get '/jakenpo' do
+		protected! 
 		erb :jakenpo
 	end
 
 	get '/battle' do
+		protected! 
 		erb :battle
+	end
+
+	get '/cemetery' do
+		protected! 
+		erb :cemetery
 	end
 
 	namespace '/api' do

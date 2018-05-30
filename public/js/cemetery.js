@@ -7,9 +7,9 @@ $(document).ready(function () {
         data.filter(petDead).forEach(pet  => {
             console.log(pet)
             $('#pets ul').append(
-                '<li class="my-list-group-item" id='+ pet._id.$oid +' onClick="choosePet(this)">' +
+                '<li class="my-list-group-item" id='+ pet._id.$oid +'>' +
                     '<div class="my-row">'+
-                        '<div class="my-col infopet-gif">' +
+                        '<div class="my-col infopet-gif dead">' +
                             '<img src="images/' + pet.petType + pet.stage + '.gif" class="gif_pet1">' +
                         '</div>' +
                         '<div class="my-col infopet">' +
@@ -30,7 +30,7 @@ function choosePet(pet){
 }
 
 function petDead(pet){
-    if(pet.state != 'dead'){
+    if(pet.state == 'dead'){
         return true
     }
     else{
