@@ -793,8 +793,18 @@ label {
     width: 108px;
     height: 181px;
     position: absolute;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    transition: transform 500ms ease-in-out;
     left: 188px;
     top: -97px;
+}
+
+.lucario-attack {
+    transform: translate(-453px,7px);
+    width: 478px;
+    height: 325px;
 }
 
 .div_jakenpo {
@@ -873,8 +883,18 @@ label {
     width: 250px;
     height: 250px;
     position: absolute;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    transition: transform 500ms ease-in-out;
     right: 180px;
     top: 51px;
+}
+
+.mypokemon-attack {
+    transform: translate(373px,-116px);
+    width: 200px;
+    height: 200px;
 }
 
 .div_status_lucario{
@@ -891,6 +911,7 @@ label {
     position: relative;
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     right: 171px;
     top: 3px;
 }
@@ -957,6 +978,7 @@ label {
     position: relative;
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     left: 177px;
     top: 3px;
 }
