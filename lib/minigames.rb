@@ -58,11 +58,14 @@ class MiniGames
     def battle(pokemon, enemy, attack)
         rand = Random.new
         if pokemon.stage == 'v1'
-            attackRate = 1
+            attackRate = 1.3
+            enemyAtackRate = 1.6
         elsif pokemon.stage == 'v2'
-            attackRate = 1.4
+            attackRate = 1.7
+            enemyAtackRate = 1.5
         else
-            attackRate = 1.8
+            attackRate = 2
+            enemyAtackRate = 1.4
         end
 
         if attack == 0 # normal attack
@@ -76,10 +79,10 @@ class MiniGames
             end
         end
 
-        enemyDamage = rand.rand(5..40)
+        enemyDamage = rand.rand(5..60)
         miss = rand.rand(0..3)
         if miss != 0
-            pokemon.health -= (damage * attackRate)
+            pokemon.health -= (damage * enemyAtackRate)
             pokemon.save()
         end
 
