@@ -2,27 +2,27 @@
 <html>
     <body>
         <div class="my-container">
-            <img src="images/background_battle2.png" class="battle">
+            <img class="battle" id="background_battle">
                 <center class="my-form">
                     <div class="div_buttons-top-battle">
-                        <a class="button-exit-tamagotchi" href='/tamagotchi'><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
-                        <a class="button-exit-tamagotchi" onClick="logout()"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i></a>
-                        <a class="button-exit-tamagotchi" onClick="mute()"><i class="fa fa-volume-off fa-lg" aria-hidden="true"></i></a>
+                        <a class="button-exit-tamagotchi" href='/tamagotchi'><i class="fas fa-times"></i></a>
+                        <a class="button-exit-tamagotchi" onClick="logout()"><i class="fas fa-sign-out-alt"></i></a>
+                        <a class="button-exit-tamagotchi" onClick="mute()"><i class="fas fa-volume-down"></i></a>
                     </div>
                     <div>
                         <img src="images/lucario.gif" class="lucario"/>
                         <img class="mypokemon" id="myPoke"/>
                         <div class="div_status_lucario">
                             <a class="name_lucario">Lucario</a></br>
-                             <progress class="progress" value="150" max="150" id="lucario"></progress>
+                             <progress class="progress" value="1000" max="1000" id="lucario"></progress>
                         </div>
                         <div class="div_status_mypokemon">
                             <a class="name_mypokemon" id="pokeName"></a></br>
                             <progress class="progress_mypokemon" value="100" max="100" id="pokemonLife"></progress>
                         </div>
                         <div class="div-button-battle">
-                            <button class="button-circle" onClick="attack(0)" id=""><i class="fa fa-cutlery" aria-hidden="true"></i></button>
-                            <button class="button-circle" onClick="attack(1)"><i class="fa fa-bath" aria-hidden="true"></i></button>
+                            <button class="button-circle" onClick="attack(0)" id=""><i class="fas fa-hand-rock"></i></button>
+                            <button class="button-circle" onClick="attack(1)"><i class="fas fa-bolt"></i></button>
                         </div>
                     </div>
                 <center>

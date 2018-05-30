@@ -42,6 +42,9 @@ $(document).ready(function () {
         $('#energy').val(data.tiredness)
         $('#higiene').val(data.higiene)
         $('#pet').attr("src", "images/" + data.petType + data.stage + ".gif");
+        if(data.state == 'dead'){
+            $('#pet').addClass('dead');
+        }
         $('#food').popover({
             html : true,
             trigger: 'focus',
