@@ -29,6 +29,11 @@ function choosePet(pet){
     window.location.href = "/tamagotchi";
 }
 
+function sound_button(){
+    let sound = document.getElementById("sound_button")
+    sound.play()
+}
+
 function petDead(pet){
     if(pet.state != 'dead'){
         return true

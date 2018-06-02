@@ -1,4 +1,10 @@
+function sound_button(){
+    let sound = document.getElementById("sound_button")
+    sound.play()
+}
+
 function login(){
+    sound_button()
     let username = $('#username').val()
     let password = $('#password').val()
     

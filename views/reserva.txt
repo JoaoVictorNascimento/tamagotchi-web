@@ -1,0 +1,19 @@
+<div class="pets_list">
+                                        <img src="images/bulbaV1.gif" class="gif_pet select_pet" onClick="select(this)" id="bulba">
+                                        <img src="images/charV1.gif" class="gif_pet select_pet" onClick="select(this)" id="char">
+                                        <img src="images/squirtleV1.gif" class="gif_pet select_pet" onClick="select(this)" id="squirtle">
+                                        <img src="images/pikachuV1.gif" class="gif_pet select_pet" onClick="select(this)" id="pikachu"></br>
+                                        <img src="images/chikoritaV1.gif" class="gif_pet select_pet" onClick="select(this)" id="chikorita"> 
+                                        <img src="images/totodileV1.gif" class="gif_pet select_pet" onClick="select(this)" id="totodile">  
+                                        <img src="images/cyndaquilV1.gif" class="gif_pet select_pet" onClick="select(this)" id="cyndaquil"> 
+                                        <img src="images/togepiV1.gif" class="gif_pet select_pet" onClick="select(this)" id="togepi"></br>
+                                        <img src="images/treeckoV1.gif" class="gif_pet select_pet" onClick="select(this)" id="treecko">
+                                        <img src="images/torchicV1.gif" class="gif_pet2 select_pet" onClick="select(this)" id="torchic">
+                                        <img src="images/mudkipV1.gif" class="gif_pet select_pet" onClick="select(this)" id="mudkip">
+                                        <img src="images/budewV1.gif" class="gif_pet2 select_pet" onClick="select(this)" id="budew">
+                                    </div>
+<p class="input_ṕet">Select your Pet</p>
+                                    
+                                    <div>
+                                    <button type="button" class="my-button-form" onClick="createPet()">Create</button></br>  
+                                    </div>

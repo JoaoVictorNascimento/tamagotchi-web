@@ -5,6 +5,10 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function sound_button(){
+    let sound = document.getElementById("sound_button")
+    sound.play()
+}
 // TODO update values on screen
 // TODO save pet id
 async function update() {
@@ -52,6 +56,7 @@ $(document).ready(function () {
                 return $("#header-food").html();
             },
             content: function() {
+                sound_button()
                 return $("#body-food").html();
             }
         });
@@ -62,6 +67,7 @@ $(document).ready(function () {
                 return $("#header-info").html();
             },
             content: function() {
+                sound_button()
                 return $("#body-info").html();
             }
         });
@@ -72,6 +78,7 @@ $(document).ready(function () {
                 return $("#header-med").html();
             },
             content: function() {
+                sound_button()
                 return $("#body-med").html();
             }
         });
@@ -82,11 +89,13 @@ $(document).ready(function () {
                 return $("#header-game").html();
             },
             content: function() {
+                sound_button()
                 return $("#body-game").html();
             }
         });
         
         $('#exampleModal').on('shown.bs.modal', function () {
+            sound_button()
             $('#myInput').trigger('focus')
         })
 
@@ -104,6 +113,7 @@ $(document).ready(function () {
 });
 
 function feed(x) {
+    sound_button()
     if(isSleeping()){
         return
     }
@@ -119,6 +129,7 @@ function feed(x) {
 }
 
 function clean(x) {
+    sound_button()
     if(isSleeping()){
         return
     }
@@ -134,6 +145,7 @@ function clean(x) {
 }
 
 function play(x) {
+    sound_button()
     if(isSleeping()){
         return
     }
@@ -149,6 +161,7 @@ function play(x) {
 }
 
 function heal(x) {
+    sound_button()
     if(isSleeping()){
         return
     }
@@ -164,6 +177,7 @@ function heal(x) {
 }
 
 function goSleep() {
+    sound_button()
     axios.put('api/pet/' + petId + '/sleep').then(function (res) {
         data = res.data
         console.log(data)
@@ -180,6 +194,7 @@ function goSleep() {
 }
 
 async function coin(){
+    sound_button()
     if(isSleeping()){
         return
     }
@@ -197,6 +212,7 @@ async function coin(){
 }
 
 async function jankenpo(){
+    sound_button()
     if(isSleeping()){
         return
     }
@@ -214,6 +230,7 @@ async function jankenpo(){
 }
 
 async function battle(){
+    sound_button()
     if(isSleeping()){
         return
     }

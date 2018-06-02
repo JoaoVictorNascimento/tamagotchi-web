@@ -1,6 +1,12 @@
 petType = ''
 
+function sound_button(){
+    let sound = document.getElementById("sound_button")
+    sound.play()
+}
+
 function select(img) {
+    sound_button()
     if (petType == '') {
         petType = img.id
         $("#" + petType).addClass('selected_pet')
@@ -12,6 +18,7 @@ function select(img) {
 }
 
 function createPet() {
+    sound_button()
     name = $("#nome").val()
     if (name != '' && petType != '') {
         axios.post('api/pet', {

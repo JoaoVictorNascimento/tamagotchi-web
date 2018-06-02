@@ -10,6 +10,9 @@ function playCoin(op){
         coin = 0
     }
 
+    let play = document.getElementById("music_coin")
+    play.play()
+
     setTimeout(function(){
         $('#coin').removeClass('coin1-active')
     },500);

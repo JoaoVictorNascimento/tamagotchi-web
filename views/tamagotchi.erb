@@ -36,9 +36,9 @@
                     <a class="name-pet" id="name"></a>
                      <div class="div-buttons">
                         <button class="button-circle" id="food" data-container="body" data-toggle="popover" data-placement="top"><i class="fas fa-utensils"></i></button>
-                        <button class="button-circle" onClick="clean(30)"><i class="fa fa-bath" aria-hidden="true"></i></button>
-                        <button class="button-circle" onClick="goSleep()"><i class="fa fa-bed" aria-hidden="true"></i></button>
-                      <a href='/menu'><button class="button-circle-menu"><i class="fa fa-bars" aria-hidden="true"></i></button></a>
+                        <button class="button-circle" id="clean"onClick="clean(30)"><i class="fa fa-bath" aria-hidden="true"></i></button>
+                        <button class="button-circle" id="sleep"onClick="goSleep()"><i class="fa fa-bed" aria-hidden="true"></i></button>
+                      <a href='/menu'><button id="menu"class="button-circle-menu" onClick="sound_button()"><i class="fa fa-bars" aria-hidden="true"></i></button></a>
                         <button class="button-circle" id="store"  data-toggle="modal" data-target="#exampleModal"><i class="fas fa-store-alt"></i></button>
                         <button class="button-circle" id="game" data-container="body" data-toggle="popover" data-placement="top"><i class="fa fa-gamepad" aria-hidden="true"></i></button>
                         <button class="button-circle" id="info" data-container="body" data-toggle="popover" data-placement="top"><i class="fa fa-info" aria-hidden="true"></i></button>
@@ -116,9 +116,6 @@
                     <li class="nav-item">
                         <a class="nav-link " id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">MedKit</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link " id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Pokemons</a>
-                    </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -151,7 +148,7 @@
                                             <a>50 $</a>
                                         </div>
                                         <div class="col">
-                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                           <button type="button" class="button_store" onClick="sound_button()">Buy</button>
                                         </div>
                                     </div>
                                 </li>
@@ -167,7 +164,7 @@
                                             <a>150 $</a>
                                         </div>
                                         <div class="col">
-                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                          <button type="button" class="button_store" onClick="sound_button()">Buy</button>
                                         </div>
                                      </div>
                                 </li>
@@ -183,7 +180,7 @@
                                             <a>450 $</a>
                                         </div>
                                         <div class="col">
-                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                          <button type="button" class="button_store" onClick="sound_button()">Buy</button>
                                         </div>
                                     </div>
                                 </li>
@@ -199,7 +196,7 @@
                                             <a>200 $</a>
                                         </div>
                                         <div class="col">
-                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                          <button type="button" class="button_store" onClick="sound_button()">Buy</button>
                                         </div>
                                     </div>
                                 </li>
@@ -215,7 +212,7 @@
                                             <a>170 $</a>
                                         </div>
                                         <div class="col">
-                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                          <button type="button" class="button_store" onClick="sound_button()">Buy</button>
                                         </div>
                                     </div>
                                 </li>
@@ -231,7 +228,7 @@
                                             <a>100 $</a>
                                         </div>
                                         <div class="col">
-                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                          <button type="button" class="button_store" onClick="sound_button()">Buy</button>
                                         </div>
                                      </div>
                                 </li>
@@ -267,7 +264,7 @@
                                             <a>30 $</a>
                                         </div>
                                         <div class="col">
-                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                          <button type="button" class="button_store" onClick="sound_button()">Buy</button>
                                         </div>
                                     </div>
                                 </li>
@@ -283,7 +280,7 @@
                                             <a>150 $</a>
                                         </div>
                                         <div class="col">
-                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                          <button type="button" class="button_store" onClick="sound_button()">Buy</button>
                                         </div>
                                      </div>
                                 </li>
@@ -299,7 +296,7 @@
                                             <a>300 $</a>
                                         </div>
                                         <div class="col">
-                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                          <button type="button" class="button_store" onClick="sound_button()">Buy</button>
                                         </div>
                                     </div>
                                 </li>
@@ -315,125 +312,13 @@
                                             <a>450 $</a>
                                         </div>
                                         <div class="col">
-                                           <input class="form-control form-control-sm" type="number" placeholder="-">
+                                          <button type="button" class="button_store" onClick="sound_button()">Buy</button>
                                         </div>
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                            <ul class="list-group body-story">
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col">
-                                           <a>First Generation Edition</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item row-store-pokemon">
-                                    <div class="row">
-                                        <div class="col">
-                                            <img src="images/pidgeyV1.gif" class="gif_pet_loja"></br>
-                                            <a>Pidgey</a></br>
-                                            <a>1000$</a>
-                                        </div>
-                                        <div class="col">
-                                            <img src="images/abraV1.gif" class="gif_pet_loja"></br>
-                                            <a>Abra</a></br>
-                                            <a>2000$</a>
-                                        </div>
-                                        <div class="col">
-                                            <img src="images/machopV1.gif" class="gif_pet_loja"></br>
-                                            <a>Machop</a></br>
-                                            <a>3000$</a>
-                                        </div>
-                                        <div class="col">
-                                          <img src="images/gastlyV1.gif" class="gif_pet_loja"></br>
-                                            <a>Gastly</a></br>
-                                            <a>4000$</a>
-                                        </div>
-                                         <div class="col">
-                                            <img src="images/bellsproutV1.gif" class="gif_pet_loja"></br>
-                                            <a>Bellsprout</a></br>
-                                            <a>2500$</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col">
-                                           <a>Second Generation Edition</a>
-                                        </div>
-                                     </div>
-                                </li>
-                                <li class="list-group-item row-store-pokemon">
-                                    <div class="row">
-                                            <div class="col">
-                                                <img src="images/elekidV1.gif" class="gif_pet_loja"></br>
-                                                <a>Elekid</a></br>
-                                                <a>1000$</a>
-                                            </div>
-                                            <div class="col">
-                                                <img src="images/hoppipV1.gif" class="gif_pet_loja"></br>
-                                                <a>Hoppip</a></br>
-                                                <a>2000$</a>
-                                            </div>
-                                            <div class="col">
-                                                <img src="images/larvitarV1.gif" class="gif_pet_loja"></br>
-                                                <a>Lavitar</a></br>
-                                                <a>3000$</a>
-                                            </div>
-                                            <div class="col">
-                                            <img src="images/magbyV1.gif" class="gif_pet_loja"></br>
-                                                <a>Magby</a></br>
-                                                <a>4000$</a>
-                                            </div>
-                                        </div>
-                                </li>
-                                 <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col">
-                                           <a>Legendary Edition</a>
-                                        </div>
-                                     </div>
-                                </li>
-                                <li class="list-group-item row-store-pokemon">
-                                    <div class="row">
-                                            <div class="col">
-                                                <img src="images/enteiV1.gif" class="gif_pet_loja"></br>
-                                                <a>Entei</a></br>
-                                                <a>10000$</a>
-                                            </div>
-                                            <div class="col">
-                                                <img src="images/articunoV1.gif" class="gif_pet_loja"></br>
-                                                <a>Articuno</a></br>
-                                                <a>20000$</a>
-                                            </div>
-                                            <div class="col">
-                                                <img src="images/ho-ohV1.gif" class="gif_pet_loja"></br>
-                                                <a>Ho-oh</a></br>
-                                                <a>35000$</a>
-                                            </div>
-                                            <div class="col">
-                                            <img src="images/suicuneV1.gif" class="gif_pet_loja"></br>
-                                                <a>Suicune</a></br>
-                                                <a>50000$</a>
-                                            </div>
-                                            <div class="col">
-                                            <img src="images/mewtwoV1.gif" class="gif_pet_loja"></br>
-                                                <a>Mewtwo</a></br>
-                                                <a>60000$</a>
-                                            </div>
-                                        </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                <div class="modal-footer">
-                    <a class="cost">Cost: 150$</a>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel Buy</button>
-                    <button type="button" class="btn btn-primary">Buy</button>
-                </div>
                 </div>
             </div>
         </div>
