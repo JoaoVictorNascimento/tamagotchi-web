@@ -25,6 +25,13 @@ function jakenpo(){
             jankenpo: jankenpo
         }).then(function (res) {
             data = res.data
+            if(data == -1){
+                recive(20)
+            } else if (data == 0){
+                recive(30)
+            } else {
+                recive(40)
+            }
             if (jankenpo == 0){
                 console.log(data)
                 if(data == -1){

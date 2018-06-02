@@ -14,3 +14,11 @@ $(document).ready(function (){
     }
     console.log(muted)
 });
+
+function recive(x){
+    axios.put("/api/recive", {
+        cash:x
+    }).then(res => {
+        console.log(res)
+    })
+}

@@ -38,6 +38,9 @@ async function update() {
 
 $(document).ready(function () {
     $('#sleeping').hide()
+    axios.get('api/cash').then(function (res) {
+        $('#cash').text(res.data)
+    });
     axios.get('api/pet/' + petId).then(function (res) {
         data = res.data
         $('#health').val(data.health)
