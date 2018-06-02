@@ -51,10 +51,12 @@ function attack(x) {
         $("#lucario").val(enemyLife)
         $('#pokemonLife').val(data.life)
         if (data.life <= 0){
+            recive(10)
             alert("Seu pokemon está desmaiado")
             window.location.href = "/tamagotchi";
         }
         if (enemyLife <= 0){
+            recive(100)
             alert("Voce ganhou a luta")
             window.location.href = "/tamagotchi";
         }

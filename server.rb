@@ -142,7 +142,7 @@ class App < Sinatra::Base
 			password = json['password']
 			password = BCrypt::Password.create(password)
 			if UserModel.where("username" => username).first.nil?
-				user = UserModel.create({"username" => username, "password" => password})
+				user = UserModel.create({"username" => username, "password" => password, "cash" => 1000})
 				user['_id'].to_json
 			else
 				halt 400, { message:'Usuario já cadastrado' }.to_json
@@ -178,6 +178,37 @@ class App < Sinatra::Base
 			session["access_token"] = nil
 			"session end"
 		end
+
+		put "/pay" do
+			protected!
+			cash = json_params['cash'];
+			user = UserModel.where({'_id' => BSON::ObjectId(@user_id)}).first
+			userCash = user['cash'].to_i
+			if cash > userCash
+				halt 400, { message:'Not enoght cash' }.to_json
+			else
+				userCash -= cash
+				user.update({"cash" => userCash});
+				{ "cash" => userCash }.to_json
+			end
+		end
+
+		put "/recive" do
+			protected!
+			cash = json_params['cash'];
+			user = UserModel.where({'_id' => BSON::ObjectId(@user_id)}).first
+			userCash = user['cash'].to_i
+			userCash += cash
+			user.update({"cash" => userCash});
+			{ "cash" => userCash }.to_json
+		end
+
+		get "/cash" do
+			protected!
+			user = UserModel.where({'_id' => BSON::ObjectId(@user_id)}).first
+			user['cash'].to_json
+		end
+
 		# END HERE
 
 		# PETS ROUTES
