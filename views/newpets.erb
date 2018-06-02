@@ -4,34 +4,106 @@
         <div class="my-container">
                 <img src="images/index.gif" class="gif">
                         <center class="my-form1">
-                        <a class="title-index">Criar Pet</a>
-                        <a class="button-exit" href='/menu' id="exit"><i class="fas fa-times"></i></a>
-                        <a class="button-exit" onClick="mute()"><i class="fas fa-volume-down"></a>
-                        </br>
-                        <div>
+                        <a class="title-index1">Create Pet</a>
+                        <div class="div-new-pet">
+                            <a class="button-exit" href='/menu' id="exit"><i class="fas fa-times"></i></a>
+                            <a class="button-exit" onClick="mute()"><i class="fas fa-volume-down"></i></a>
+                        </div>
+                        <div class="form_label">
                          <label for="nome"><p class="label_pet">Digite o nome do seu Pet</p></label>
-                            </br><input id=nome type="text" placeholder="Nome do Pet">
+                            </br><input id=nome type="text" placeholder="Nome do Pet"></br>
+                            <p class="input_pet">Selecione o seu Pet</p>
                         </div>
-                        </br>
-                         <p class="input_ṕet">Selecione o seu Pet</p>
-                        <div class="pets_list">
-                            <img src="images/bulbaV1.gif" class="gif_pet select_pet" onClick="select(this)" id="bulba">
-                            <img src="images/charV1.gif" class="gif_pet select_pet" onClick="select(this)" id="char">
-                            <img src="images/squirtleV1.gif" class="gif_pet select_pet" onClick="select(this)" id="squirtle">
-                            <img src="images/pikachuV1.gif" class="gif_pet select_pet" onClick="select(this)" id="pikachu"></br>
-                            <img src="images/chikoritaV1.gif" class="gif_pet select_pet" onClick="select(this)" id="chikorita"> 
-                            <img src="images/totodileV1.gif" class="gif_pet select_pet" onClick="select(this)" id="totodile">  
-                            <img src="images/cyndaquilV1.gif" class="gif_pet select_pet" onClick="select(this)" id="cyndaquil"> 
-                            <img src="images/togepiV1.gif" class="gif_pet select_pet" onClick="select(this)" id="togepi"></br>
-                            <img src="images/treeckoV1.gif" class="gif_pet select_pet" onClick="select(this)" id="treecko">
-                            <img src="images/torchicV1.gif" class="gif_pet2 select_pet" onClick="select(this)" id="torchic">
-                            <img src="images/mudkipV1.gif" class="gif_pet select_pet" onClick="select(this)" id="mudkip">
-                            <img src="images/budewV1.gif" class="gif_pet2 select_pet" onClick="select(this)" id="budew">
-                         </div>
+                        <div class="create_pokemons">
+                            <center>
+                            <ul class="nav nav-tabs nav-justified" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Normal</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Special</a>
+                                </li>
+                            </ul>
+                            </center>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    <div class="pets_list">
+                                    </br>
+                                        <img src="images/bulbaV1.gif" class="gif_pet select_pet" onClick="select(this)" id="bulba">
+                                        <img src="images/charV1.gif" class="gif_pet select_pet" onClick="select(this)" id="char">
+                                        <img src="images/squirtleV1.gif" class="gif_pet select_pet" onClick="select(this)" id="squirtle">
+                                        <img src="images/pikachuV1.gif" class="gif_pet select_pet" onClick="select(this)" id="pikachu"></br>
+                                        <img src="images/chikoritaV1.gif" class="gif_pet select_pet" onClick="select(this)" id="chikorita"> 
+                                        <img src="images/totodileV1.gif" class="gif_pet select_pet" onClick="select(this)" id="totodile">  
+                                        <img src="images/cyndaquilV1.gif" class="gif_pet select_pet" onClick="select(this)" id="cyndaquil"> 
+                                        <img src="images/togepiV1.gif" class="gif_pet select_pet" onClick="select(this)" id="togepi"></br>
+                                        <img src="images/treeckoV1.gif" class="gif_pet select_pet" onClick="select(this)" id="treecko">
+                                        <img src="images/torchicV1.gif" class="gif_pet select_pet" onClick="select(this)" id="torchic">
+                                        <img src="images/mudkipV1.gif" class="gif_pet select_pet" onClick="select(this)" id="mudkip">
+                                        <img src="images/budewV1.gif" class="gif_pet select_pet" onClick="select(this)" id="budew">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                    <ul class="list-pokemon">
+                                        <div>
+                                            <li class="list-pokemon-item"><img src="images/abraV1.gif" class="gif_special select_pet" onClick="select(this)" id="abra"></li></br>
+                                            <a>300 $</a>
+                                        </div>
+                                        <div>
+                                            <li class="list-pokemon-item"><img src="images/pidgeyV1.gif" class="gif_pet2 select_pet" onClick="select(this)" id="pidgey"></li></br>
+                                            <a>300 $</a>
+                                        </div>
+                                        <div>
+                                            <li class="list-pokemon-item"><img src="images/machopV1.gif" class="gif_special select_pet" onClick="select(this)" id="machop"></li></br>
+                                            <a>300 $</a>
+                                        </div>
+                                        <div>
+                                            <li class="list-pokemon-item"><img src="images/gastlyV1.gif" class="gif_special select_pet" onClick="select(this)" id="gastly"></li></br>
+                                            <a>300 $</a>
+                                        </div>
+                                    </ul>
+                                    <ul class="list-pokemon">
+                                         <div>
+                                            <li class="list-pokemon-item"><img src="images/hoppipV1.gif" class="gif_special select_pet" onClick="select(this)" id="hop"></li></br>
+                                            <a>300 $</a>
+                                         </div>
+                                         <div>
+                                            <li class="list-pokemon-item"><img src="images/larvitarV1.gif" class="gif_pet2 select_pet" onClick="select(this)" id="larvi"></li></br>  
+                                            <a>300 $</a>
+                                        </div>
+                                        <div>
+                                            <li class="list-pokemon-item"><img src="images/bellsproutV1.gif" class="gif_special select_pet" onClick="select(this)" id="bell"></li></br> 
+                                            <a>300 $</a>
+                                        </div>
+                                        <div>
+                                            <li class="list-pokemon-item"><img src="images/magbyV1.gif" class="gif_pet2 select_pet" onClick="select(this)" id="magby"></li></br>
+                                            <a>300 $</a>
+                                        </div>
+                                    </ul>
+                                    <ul class="list-pokemon">
+                                        <div>
+                                            <li class="list-pokemon-item"><img src="images/articunoV1.gif" class="gif_special select_pet" onClick="select(this)" id="art"></li></br>
+                                            <a>300 $</a>
+                                        </div>
+                                        <div>
+                                            <li class="list-pokemon-item"><img src="images/ho-ohV1.gif" class="gif_special select_pet" onClick="select(this)" id="ho"></li></br>
+                                            <a>300 $</a>
+                                        </div>
+                                        <div>
+                                            <li class="list-pokemon-item"><img src="images/enteiV1.gif" class="gif_special select_pet" onClick="select(this)" id="entei"></li></br>
+                                            <a>300 $</a>
+                                        </div>
+                                        <div>
+                                            <li class="list-pokemon-item"><img src="images/suicuneV1.gif" class="gif_special select_pet" onClick="select(this)" id="suic"></li></br>
+                                            <a>300 $</a>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                          <div>
-                           <button type="button" class="my-button-form" onClick="createPet()">Criar</button></br>  
+                           <button type="button" class="create" onClick="createPet()">Criar</button></br>  
                         </div>
-            <center>
         </div>
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/newpets.js"></script>

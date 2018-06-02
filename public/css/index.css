@@ -35,7 +35,7 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
     width: 604px;
-    height: 604px;
+    height: 660px;
     border-radius: 15px;
     opacity: 0.8;
     background-color: black;
@@ -58,6 +58,17 @@
     top: 30px;
     left: 15px;
 }
+
+.title-index1{
+    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 6px;
+    color: white !important;
+    position: absolute;
+    top: 30px;
+    left: 212px;
+}
+ 
  
 .title-mypets {
     position: fixed;
@@ -180,38 +191,57 @@ input {
     box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.58), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
 }
 
-.button-circle:hover {
-    background-color: rgb(218, 218, 218);
-    margin-left: 22px;
-    margin-right: 22px;
-    border: 1px solid #ffffff;
-    border-radius: 50%;
-    margin-left: 30px;
-    margin-right: 30px;
-    display: inline-block;
-    text-align: center;
-    outline: none;
-    position: relative;
-    top: 28px;
-    box-shadow: 1px;
-    box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.58), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
+.form_label{
+    position: absolute;
+    top: 50px;
+    left: 151px;
 }
 
+.create_pokemons {
+    position: absolute;
+    top: 245px;
+    left: 42px;
+}
+
+.gif_special {
+    top: 1px;
+    position: relative;
+    width: 82px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.input_pet {
+    bottom: -14px;
+    position: relative;
+}
+.create {
+    border: 1px solid rgb(149, 146, 146);
+    border-radius: 6px;
+    outline: none;
+    padding: 6px 17px;
+    margin-top: 14px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    position: absolute;
+    bottom: 5px;
+    left: 258px;
+}
 
 .button-circle:active {
     background-color: rgb(255, 247, 247);
+    height: 29px;
+    width: 29px;
     margin-left: 22px;
     margin-right: 22px;
     border: 1px solid #ffffff;
     border-radius: 50%;
-    margin-left: 30px;
-    margin-right: 30px;
     display: inline-block;
     text-align: center;
     outline: none;
     position: relative;
     top: 28px;
-    box-shadow: 1px;
+    box-shadow: 0.4px;
     box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.58), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
 }
 
@@ -375,6 +405,12 @@ input {
     width: 55px;
 }
 
+.div-new-pet{
+    position: absolute;
+    right: 213px;
+    top: 10px;
+}
+
 ::placeholder {
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
@@ -390,10 +426,6 @@ input {
     margin-top: 50px
 }
 
-.input_pet {
-    color: green;
-}
- 
 a:link { 
     text-decoration:none; 
 }
@@ -418,7 +450,8 @@ a{
 .my-list-group {
     display:-ms-flexbox;
     display:block;
-    overflow-x:auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
     -webkit-overflow-scrolling:touch;
     -ms-overflow-style:-ms-autohiding-scrollbar;
     -ms-flex-direction:column;
@@ -1103,15 +1136,6 @@ label {
     background-color: rgb(40, 39, 39);
 }
 
-.row-store-pokemon::-webkit-scrollbar:hover {
-    width: 5px;
-    border-radius: 2px;
-}
- 
-.row-store-pokemon::-webkit-scrollbar-thumb:hover {
-    background-color:rgb(40, 39, 39);
-    border-radius: 2px;
-}
 
 .gif_pet_loja {
     position: relative;
@@ -1150,4 +1174,38 @@ label {
 
 .button_store:active, .button_store:focus {
     outline: none;
+}
+
+.list-pokemon{
+    display: -ms-flexbox;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch ;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -ms-flex-direction: row;
+    flex-direction: row ;
+    padding-left: 0;
+    margin-bottom: 0;
+    border: none;
+    width: 538px;
+    height: 110px;
+}
+
+.list-pokemon-item {
+    position: absolute;
+    display: contents;
+    padding: 1.75rem 3.25rem;
+    margin-bottom: -1px;
+    box-shadow: 0px 2.2px rgb(42, 41, 41);
+}
+
+.list-pokemon::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 2px;
+}
+ 
+.list-pokemon::-webkit-scrollbar-thumb {
+    background-color: rgb(155, 148, 148);
+    border-radius: 2px;
 }
