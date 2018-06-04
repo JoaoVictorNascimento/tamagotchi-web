@@ -24,13 +24,8 @@ $(document).ready(function () {
 });
 
 function attack(x) {
-    $('#myPoke').addClass('mypokemon-attack')
-
-    setTimeout(function(){
-        $('#myPoke').removeClass('mypokemon-attack')
-       
-    },200);
-
+   
+    /*
     setTimeout(function(){
         $('#lucario1').addClass('lucario-attack')
         $('#lucario1').attr("src","images/lucario-attack.gif")
@@ -39,12 +34,18 @@ function attack(x) {
 
     setTimeout(function(){
         $('#lucario').removeClass('lucario-attack')
-    },600);
+    },600);*/
 
     axios.post('/api/minigame/battle/'+petId, {
         attack: x,
         enemy: enemyLife
     }).then(function (res) {
+        $('#myPoke').addClass('mypokemon-attack')
+        setTimeout(function(){
+            $('#myPoke').removeClass('mypokemon-attack')
+            $('#lucario1').addClass('lucario-attack')
+            //$('#lucario1').attr("src","images/lucario-attack.gif")
+        },400);
         data = res.data
         console.log(data)
         enemyLife = data.enemy

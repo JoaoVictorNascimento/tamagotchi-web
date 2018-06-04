@@ -4,8 +4,10 @@
         <div class="my-container">
             <img src="images/ambient.gif" class="gif">
                 <center class="my-form">
-                <a class="button-exit-tamagotchi" onClick="logout()"><i class="fas fa-sign-out-alt"></i></a>
-                <a class="button-exit-tamagotchi" onClick="mute()"><i class="fas fa-volume-down"></i></a>
+                <div class="div-tamagotchi">
+                    <a class="button-exit-tamagotchi" onClick="logout()"><i class="fas fa-sign-out-alt"></i></a>
+                    <a class="button-exit-tamagotchi" onClick="mute()"><i class="fas fa-volume-down"></i></a>
+                </div>
                     <div class="div-status-bar">
                     <a class="cash">Cash : <span id="cash"></span> $</a>
                     <ul class="status-bar">
@@ -33,7 +35,7 @@
                     </div>
                     <img class="gif-tamagotchi" id="pet">
                     <img class="gif-sleeping" src="images/sleeping.gif" id="sleeping">
-                    <a class="name-pet" id="name"></a>
+                    <a class="name-pet" id="name" data-toggle="modal" data-target="#changeName"></a>
                      <div class="div-buttons">
                         <button class="button-circle" id="food" data-container="body" data-toggle="popover" data-placement="top"><i class="fas fa-utensils"></i></button>
                         <button class="button-circle" id="clean"onClick="clean(30)"><i class="fa fa-bath" aria-hidden="true"></i></button>
@@ -97,24 +99,40 @@
                         <a onClick="battle()"><img src="images/battle.gif" id="battle" class="food" data-toggle="tooltip" data-placement="left" title="Battle"></a>
                     </div>
                 </div>
-        </div> 
+        </div>
+        <div class="modal fade" id="changeName" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title font-pop" id="exampleModalLabel" >Change Name</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                   <input id=changeName type="text" class="font-pop">
+                     <button type="button" class="button_store d_name" onClick="changeName()" data-dismiss="modal">Save Name</button>
+                </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
                     <center>
-                    <h5 class="modal-title modal-center" id="exampleModalLabel">Store</h5>
+                    <h5 class="modal-title modal-center font-pop" id="exampleModalLabel">STORE</h5>
                     </center>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                    <li class="nav-item active">
-                        <a class="nav-link " id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Food</a>
+                    <li class="nav-item font-pop">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Food</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">MedKit</a>
+                        <a class="nav-link font-pop" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">MedKit</a>
                     </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -123,16 +141,16 @@
                                 <li class="list-group-item">
                                     <div class="row">
                                         <div class="col">
-                                           <a>Food</a>
+                                           <a class="font-pop">Food</a>
                                         </div>
                                         <div class="col">
-                                            <a>Name</a>
+                                            <a class="font-pop">Name</a>
                                         </div>
                                         <div class="col">
-                                            <a>Cost</a>
+                                            <a class="font-pop">Cost</a>
                                         </div>
                                         <div class="col">
-                                            <a>Qnt</a>
+                                            <a class="font-pop">Qnt</a>
                                         </div>
                                     </div>
                                 </li>
@@ -142,10 +160,10 @@
                                             <img src="images/orange.gif" class="food">
                                         </div>
                                         <div class="col">
-                                            <a>Orange</a>
+                                            <a class="font-pop">Orange</a>
                                         </div>
                                         <div class="col">
-                                            <a>50 $</a>
+                                            <a class="font-pop">50 $</a>
                                         </div>
                                         <div class="col">
                                            <button type="button" class="button_store" onClick="sound_button()">Buy</button>
@@ -158,10 +176,10 @@
                                             <img src="images/fastfood.png" class="food">
                                         </div>
                                         <div class="col">
-                                            <a>Fast Food</a>
+                                            <a class="font-pop">Fast Food</a>
                                         </div>
                                         <div class="col">
-                                            <a>150 $</a>
+                                            <a class="font-pop">150 $</a>
                                         </div>
                                         <div class="col">
                                           <button type="button" class="button_store" onClick="sound_button()">Buy</button>
@@ -174,10 +192,10 @@
                                             <img src="images/japoneses_food.png" class="food">
                                         </div>
                                         <div class="col">
-                                            <a>Japoneses Food</a>
+                                            <a class="font-pop">Japoneses Food</a>
                                         </div>
                                         <div class="col">
-                                            <a>450 $</a>
+                                            <a class="font-pop">450 $</a>
                                         </div>
                                         <div class="col">
                                           <button type="button" class="button_store" onClick="sound_button()">Buy</button>
@@ -190,10 +208,10 @@
                                             <img src="images/pancake.gif" class="food">
                                         </div>
                                         <div class="col">
-                                            <a>Pancake</a>
+                                            <a class="font-pop">Pancake</a>
                                         </div>
                                         <div class="col">
-                                            <a>200 $</a>
+                                            <a class="font-pop">200 $</a>
                                         </div>
                                         <div class="col">
                                           <button type="button" class="button_store" onClick="sound_button()">Buy</button>
@@ -206,10 +224,10 @@
                                             <img src="images/ramen.png" class="food">
                                         </div>
                                         <div class="col">
-                                            <a>Ramen</a>
+                                            <a class="font-pop">Ramen</a>
                                         </div>
                                         <div class="col">
-                                            <a>170 $</a>
+                                            <a class="font-pop">170 $</a>
                                         </div>
                                         <div class="col">
                                           <button type="button" class="button_store" onClick="sound_button()">Buy</button>
@@ -222,10 +240,10 @@
                                             <img src="images/rocombole.png" class="food">
                                         </div>
                                         <div class="col">
-                                            <a>Roulade</a>
+                                            <a class="font-pop">Roulade</a>
                                         </div>
                                         <div class="col">
-                                            <a>100 $</a>
+                                            <a class="font-pop">100 $</a>
                                         </div>
                                         <div class="col">
                                           <button type="button" class="button_store" onClick="sound_button()">Buy</button>
@@ -239,16 +257,16 @@
                                 <li class="list-group-item">
                                     <div class="row">
                                         <div class="col">
-                                           <a>MedKit</a>
+                                           <a class="font-pop">MedKit</a>
                                         </div>
                                         <div class="col">
-                                            <a>Name</a>
+                                            <a class="font-pop">Name</a>
                                         </div>
                                         <div class="col">
-                                            <a>Cost</a>
+                                            <a class="font-pop">Cost</a>
                                         </div>
                                         <div class="col">
-                                            <a>Qnt</a>
+                                            <a class="font-pop">Qnt</a>
                                         </div>
                                     </div>
                                 </li>
@@ -258,10 +276,10 @@
                                             <img src="images/bandaid.gif" class="food">
                                         </div>
                                         <div class="col">
-                                            <a>Band-Aid</a>
+                                            <a class="font-pop">Band-Aid</a>
                                         </div>
                                         <div class="col">
-                                            <a>30 $</a>
+                                            <a class="font-pop">30 $</a>
                                         </div>
                                         <div class="col">
                                           <button type="button" class="button_store" onClick="sound_button()">Buy</button>
@@ -274,10 +292,10 @@
                                             <img src="images/potion1.png" class="food">
                                         </div>
                                         <div class="col">
-                                            <a>Super Elixir</a>
+                                            <a class="font-pop">Super Elixir</a>
                                         </div>
                                         <div class="col">
-                                            <a>150 $</a>
+                                            <a class="font-pop">150 $</a>
                                         </div>
                                         <div class="col">
                                           <button type="button" class="button_store" onClick="sound_button()">Buy</button>
@@ -290,10 +308,10 @@
                                             <img src="images/potion2.png" class="food">
                                         </div>
                                         <div class="col">
-                                            <a>Mega Elixir</a>
+                                            <a class="font-pop">Mega Elixir</a>
                                         </div>
                                         <div class="col">
-                                            <a>300 $</a>
+                                            <a class="font-pop">300 $</a>
                                         </div>
                                         <div class="col">
                                           <button type="button" class="button_store" onClick="sound_button()">Buy</button>
@@ -306,10 +324,10 @@
                                             <img src="images/potion3.png" class="food">
                                         </div>
                                         <div class="col">
-                                            <a>Ultra Elixir</a>
+                                            <a class="font-pop">Ultra Elixir</a>
                                         </div>
                                         <div class="col">
-                                            <a>450 $</a>
+                                            <a class="font-pop">450 $</a>
                                         </div>
                                         <div class="col">
                                           <button type="button" class="button_store" onClick="sound_button()">Buy</button>

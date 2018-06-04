@@ -28,9 +28,9 @@ $(document).ready(function () {
                             '<img src="images/' + pet.petType + pet.stage + '.gif" class="gif_pet">' +
                         '</div>' +
                         '<div class="my-col infopet-ranking">'+
-                            '<a>Nome: '+ pet.name +'</a></br>'+
-                            '<a>Idade: '+ pet.age +' dias</a></br >'+
-                            '<a>Criador: ' + pet.creator + '</a></br>' +
+                            '<a>Name: '+ pet.name +'</a></br>'+
+                            '<a>Age: '+ pet.age +' Days</a></br >'+
+                            '<a>Trainer: ' + pet.creator + '</a></br>' +
                         '</div>' +
                     '</div>' +
                 '</li>'

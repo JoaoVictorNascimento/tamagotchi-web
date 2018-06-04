@@ -48,6 +48,7 @@ $(document).ready(function () {
         $('#hunger').val(data.hunger)
         $('#energy').val(data.tiredness)
         $('#higiene').val(data.higiene)
+        $('#changeName').attr("value", data.name)
         $('#pet').attr("src", "images/" + data.petType + data.stage + ".gif");
         if(data.state == 'dead'){
             $('#pet').addClass('dead');
@@ -256,4 +257,14 @@ function isSleeping(){
         return true
     }
     return false
+}
+
+function changeName(){
+    name = $('#changeName').val()
+    axios.put('api/pet/'+ petId +'/name', {
+        name: name
+    }).catch(function (err) {
+        console.log(err)
+    })
+    console.log(name)
 }

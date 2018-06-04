@@ -210,6 +210,15 @@ input {
     margin-right: 20px;
     margin-left: 20px;
 }
+
+.gif_special1 {
+        top: 1px;
+    position: relative;
+    width: 82px;
+    margin-right: 30px;
+    margin-left: 32px;
+}
+
 .input_pet {
     bottom: -14px;
     position: relative;
@@ -267,23 +276,6 @@ input {
     box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.58), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
 }
 
-.button-circle-menu:hover {
-    background-color: rgb(255, 247, 247);
-    height: 40px;
-    width: 40px;
-    border: 1px solid #ffffff;
-    border-radius: 30px;
-    margin-left: 20px;
-    margin-right: 20px;
-    display: inline-block;
-    text-align: center;
-    outline: none;
-    position: relative;
-    top: 28px;
-    box-shadow: 1px;
-    box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.58), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
-}
-
 .button-circle-menu:active {
     background-color: rgb(255, 247, 247);
     height: 38px;
@@ -300,7 +292,6 @@ input {
     box-shadow: 1px;
     box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.58), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
 }
-
 
 .size {
     font-size: 8px;
@@ -405,10 +396,23 @@ input {
     width: 55px;
 }
 
+.div-tamagotchi {
+    position: absolute;
+    top: 18px;
+    left: 276px;
+    width: 55px;
+}
+
 .div-new-pet{
     position: absolute;
     right: 213px;
     top: 10px;
+}
+
+.div-cem{
+    position: absolute;
+    right: -136px;
+    top: -138px;
 }
 
 ::placeholder {
@@ -763,6 +767,7 @@ label {
 .font-pop{
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
+    color: rgb(23, 23, 23);
 }
 
 .body-food{
@@ -829,9 +834,9 @@ label {
 }
 
 .lucario-attack {
-    transform: translate(-453px,7px);
-    width: 478px;
-    height: 325px;
+    transform: translate(-402px,71px);
+    width: 208px;
+    height: 281px;
 }
 
 .div_jakenpo {
@@ -1208,4 +1213,27 @@ label {
 .list-pokemon::-webkit-scrollbar-thumb {
     background-color: rgb(155, 148, 148);
     border-radius: 2px;
+}
+
+.d_name{
+    position: absolute;
+    right: 20px;
+}
+
+.ajust_label1 {
+    position: absolute;
+    top: 128px;
+    margin-left: -22px;
+}
+
+.ajust_label2 {
+    position: absolute;
+    top: 229px;
+    margin-left: -22px;
+}
+
+.ajust_label3 {
+    position: absolute;
+    top: 334px;
+    margin-left: -18px;
 }
