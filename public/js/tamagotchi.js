@@ -116,6 +116,36 @@ $(document).ready(function () {
     })
 });
 
+function buyFeed(x){
+    let id = x.id;
+    let value = Number($("#"+id+"-value").text())
+    let price = Number($("#"+id+"-price").text())
+    axios.put('api/pay', {
+        cash: price
+    }).then(function (res) {
+        feed(value);
+        updateCash();        
+    }).catch(function (err) {
+        alert("Dinheiro insuficiente!")
+        return;
+    })
+}
+
+function buyMed(x){
+    let id = x.id;
+    let value = Number($("#"+id+"-value").text())
+    let price = Number($("#"+id+"-price").text())
+    axios.put('api/pay', {
+        cash: price
+    }).then(function (res) {
+        heal(value);
+        updateCash();
+    }).catch(function (err) {
+        alert("Dinheiro insuficiente!")
+        return;
+    })
+}
+
 function feed(x) {
     sound_button()
     if(isSleeping()){
