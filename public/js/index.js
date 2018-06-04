@@ -6,7 +6,10 @@ function mute() {
 
 $(document).ready(function (){
     muted = window.localStorage.getItem('mute')
-    som = document.getElementById("into"); 
+    som = document.getElementById("into");
+    axios.get('api/cash').then(function (res) {
+        $('#cash').text(res.data)
+    });
     if(muted == 'true'){
         som.muted = true
     } else {
@@ -21,4 +24,10 @@ function recive(x){
     }).then(res => {
         console.log(res)
     })
+}
+
+function updateCash(){
+    axios.get('api/cash').then(function (res) {
+        $('#cash').text(res.data)
+    });
 }

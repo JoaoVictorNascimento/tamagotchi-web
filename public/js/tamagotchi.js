@@ -38,9 +38,6 @@ async function update() {
 
 $(document).ready(function () {
     $('#sleeping').hide()
-    axios.get('api/cash').then(function (res) {
-        $('#cash').text(res.data)
-    });
     axios.get('api/pet/' + petId).then(function (res) {
         data = res.data
         $('#health').val(data.health)
@@ -52,17 +49,6 @@ $(document).ready(function () {
         if(data.state == 'dead'){
             $('#pet').addClass('dead');
         }
-        $('#food').popover({
-            html : true,
-            trigger: 'focus',
-            title: function () {
-                return $("#header-food").html();
-            },
-            content: function() {
-                sound_button()
-                return $("#body-food").html();
-            }
-        });
         $('#info').popover({
             html : true,
             trigger: 'focus',
@@ -72,17 +58,6 @@ $(document).ready(function () {
             content: function() {
                 sound_button()
                 return $("#body-info").html();
-            }
-        });
-        $('#med').popover({
-            html : true,
-            trigger: 'focus',
-            title: function () {
-                return $("#header-med").html();
-            },
-            content: function() {
-                sound_button()
-                return $("#body-med").html();
             }
         });
         $('#game').popover({
@@ -114,6 +89,36 @@ $(document).ready(function () {
         console.log(err)
     })
 });
+
+function buyFeed(x){
+    let id = x.id;
+    let value = Number($("#"+id+"-value").text())
+    let price = Number($("#"+id+"-price").text())
+    axios.put('api/pay', {
+        cash: price
+    }).then(function (res) {
+        feed(value);
+        updateCash();        
+    }).catch(function (err) {
+        alert("Dinheiro insuficiente!")
+        return;
+    })
+}
+
+function buyMed(x){
+    let id = x.id;
+    let value = Number($("#"+id+"-value").text())
+    let price = Number($("#"+id+"-price").text())
+    axios.put('api/pay', {
+        cash: price
+    }).then(function (res) {
+        heal(value);
+        updateCash();
+    }).catch(function (err) {
+        alert("Dinheiro insuficiente!")
+        return;
+    })
+}
 
 function feed(x) {
     sound_button()
