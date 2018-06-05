@@ -392,7 +392,7 @@ input {
 .div-buttons-top1{
     position: absolute;
     top: -108px;
-    left: 605px;
+    left: 590px;
     width: 55px;
 }
 
@@ -490,9 +490,9 @@ a{
 .gif_pet {
     margin-right: 23px;
     margin-left: 12px;
-    top: -19px;
+    top: -9px;
     position: relative;
-    width: 82px;
+    width: 88px;
 }
 
 .gif_pet1 {
@@ -505,6 +505,13 @@ a{
     margin-right: 48px;
     margin-left: 42px;
     width:53px;
+}
+.gif_pet3 {
+    margin-right: 23px;
+    margin-left: 12px;
+    top: -9px;
+    position: relative;
+    width: 63px;
 }
 
 .pet_list {
@@ -768,6 +775,7 @@ label {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     color: rgb(23, 23, 23);
+    text-align: justify;
 }
 
 .body-food{
@@ -825,18 +833,16 @@ label {
     width: 108px;
     height: 181px;
     position: absolute;
-    -webkit-transition: all 500ms ease;
-    -moz-transition: all 500ms ease;
-    -ms-transition: all 500ms ease;
-    transition: transform 500ms ease-in-out;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    transition: transform 500ms;
     left: 188px;
     top: -97px;
 }
 
 .lucario-attack {
-    transform: translate(-402px,71px);
-    width: 208px;
-    height: 281px;
+    transform: scale(1.7) translate(-220px,76px);
 }
 
 .div_jakenpo {
@@ -1144,7 +1150,8 @@ label {
 
 .gif_pet_loja {
     position: relative;
-    width: 82px;
+    margin-right: 15px;
+    margin-left: 29px;
 }
 
 .cash {
@@ -1234,6 +1241,17 @@ label {
 
 .ajust_label3 {
     position: absolute;
-    top: 334px;
+    top: 340px;
     margin-left: -18px;
+}
+
+.just {
+    text-align: justify;
+}
+
+.changeName {
+    position: relative;
+    top: 253px;
+    left: -77px;
+    color: rgb(181, 176, 176) !important;
 }

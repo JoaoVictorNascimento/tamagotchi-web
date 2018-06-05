@@ -25,7 +25,7 @@ $(document).ready(function () {
                 '<li class="my-list-group-item" id=' + pet._id.$oid + '>' +
                     '<div class="my-row">' +
                         '<div class="my-col image-pet-ranked">' +
-                            '<img src="images/' + pet.petType + pet.stage + '.gif" class="gif_pet">' +
+                            '<img src="images/' + pet.petType + pet.stage + '.gif" class="gif_pet3">' +
                         '</div>' +
                         '<div class="my-col infopet-ranking">'+
                             '<a>Name: '+ pet.name +'</a></br>'+

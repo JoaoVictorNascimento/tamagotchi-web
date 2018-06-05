@@ -5,6 +5,11 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function punch(){
+    let sound = document.getElementById("punch")
+    sound.play()
+}
+
 $(document).ready(function () {
     axios.get('api/pet/' + petId).then(function (res) {
         data = res.data
@@ -23,43 +28,40 @@ $(document).ready(function () {
     })
 });
 
-function attack(x) {
-   
-    /*
-    setTimeout(function(){
-        $('#lucario1').addClass('lucario-attack')
-        $('#lucario1').attr("src","images/lucario-attack.gif")
-       
-    },400);
-
-    setTimeout(function(){
-        $('#lucario').removeClass('lucario-attack')
-    },600);*/
-
+function attack(x) { 
     axios.post('/api/minigame/battle/'+petId, {
         attack: x,
         enemy: enemyLife
     }).then(function (res) {
         $('#myPoke').addClass('mypokemon-attack')
+        punch();
         setTimeout(function(){
             $('#myPoke').removeClass('mypokemon-attack')
             $('#lucario1').addClass('lucario-attack')
-            //$('#lucario1').attr("src","images/lucario-attack.gif")
+            punch();
+            
         },400);
+        setTimeout(function(){
+            $('#lucario1').removeClass('lucario-attack')
+            sound.play()
+        },700);
         data = res.data
         console.log(data)
         enemyLife = data.enemy
         $("#lucario").val(enemyLife)
         $('#pokemonLife').val(data.life)
+        punch();
         if (data.life <= 0){
             recive(10)
             alert("Seu pokemon está desmaiado")
             window.location.href = "/tamagotchi";
+            $('#myPoke').removeClass('mypokemon-attack')
         }
         if (enemyLife <= 0){
             recive(100)
             alert("Voce ganhou a luta")
             window.location.href = "/tamagotchi";
+            $('#myPoke').removeClass('mypokemon-attack')
         }
     })
 }

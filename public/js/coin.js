@@ -22,7 +22,7 @@ function playCoin(op){
         }).then(function (res) {
             data = res.data
             if (data > 0){
-                recive(30)
+                recive(10)
                 win = "YOU WIN"
                 $('#result').text(win)
                 if (coin == 1){
@@ -36,7 +36,7 @@ function playCoin(op){
                 wins += 1;
                 $('#number').text('Victories: '+ wins)
             } else {
-                recive(10)
+                recive(5)
                 wins = 0;
                 lose = "YOU LOSE"
                 $('#result').text(lose)

@@ -8,7 +8,6 @@ function sound_button() {
 }
 
 function select(img) {
-    sound_button()
     sound_button();
     special = false;
     if (petType == '') {
@@ -21,7 +20,6 @@ function select(img) {
     }
 }
 
-function createPet() {
 function selectSpecial(img) {
     sound_button()
     special = true;

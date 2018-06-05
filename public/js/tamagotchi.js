@@ -38,9 +38,6 @@ async function update() {
 
 $(document).ready(function () {
     $('#sleeping').hide()
-    axios.get('api/cash').then(function (res) {
-        $('#cash').text(res.data)
-    });
     axios.get('api/pet/' + petId).then(function (res) {
         data = res.data
         $('#health').val(data.health)
@@ -53,17 +50,6 @@ $(document).ready(function () {
         if(data.state == 'dead'){
             $('#pet').addClass('dead');
         }
-        $('#food').popover({
-            html : true,
-            trigger: 'focus',
-            title: function () {
-                return $("#header-food").html();
-            },
-            content: function() {
-                sound_button()
-                return $("#body-food").html();
-            }
-        });
         $('#info').popover({
             html : true,
             trigger: 'focus',
@@ -73,17 +59,6 @@ $(document).ready(function () {
             content: function() {
                 sound_button()
                 return $("#body-info").html();
-            }
-        });
-        $('#med').popover({
-            html : true,
-            trigger: 'focus',
-            title: function () {
-                return $("#header-med").html();
-            },
-            content: function() {
-                sound_button()
-                return $("#body-med").html();
             }
         });
         $('#game').popover({
@@ -290,11 +265,17 @@ function isSleeping(){
 }
 
 function changeName(){
-    name = $('#changeName').val()
-    axios.put('api/pet/'+ petId +'/name', {
-        name: name
-    }).catch(function (err) {
-        console.log(err)
-    })
+    name = $("#changename").val()    
+    if (name != '') {
+        axios.put('api/pet/' + petId + '/name', {
+            name: name
+        }).then(function (res) {
+            alert("Nome mudado!")
+        })
+    } else {
+        alert("Preencha podos os campos")
+        return;
+    }
     console.log(name)
+    console.log("oi")
 }
