@@ -20,6 +20,9 @@ $(document).ready(function () {
                 return 1
             }
         })
+        data = data.filter(pet => {
+            return pet.state != 'dead';
+        })
         data.forEach(pet => {
             $('#pets ul').append(
                 '<li class="my-list-group-item" id=' + pet._id.$oid + '>' +

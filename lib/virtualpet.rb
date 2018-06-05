@@ -561,8 +561,8 @@ class VirtualPet
 			updatePet = Hash.new
 			value = @higiene + value
 			updatePet['higiene'] = @higiene = (value < 100) ? value : 100
-			value = @health + value/4
-			updatePet['health'] = @health = (value < 100) ? value : 100
+			# value = @health + value/10
+			# updatePet['health'] = @health = (value < 100) ? value : 100
 			checkState()
 			updatePet['state'] = @state
 			VirtualPetModel.where({'_id': @id}).first.update(updatePet)
@@ -589,7 +589,7 @@ class VirtualPet
 			updatePet = Hash.new
 			value = @health + value
 			updatePet['health'] = @health = (value < 100) ? value : 100
-			value = @happy + value/4
+			value = @happy + value/10
 			updatePet['happy'] = @happy = (value < 100) ? value : 100
 			checkState()
 			updatePet['state'] = @state
