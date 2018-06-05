@@ -454,8 +454,8 @@ a{
 .my-list-group {
     display:-ms-flexbox;
     display:block;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    /* overflow-x: scroll; */
+    overflow-y: auto;
     -webkit-overflow-scrolling:touch;
     -ms-overflow-style:-ms-autohiding-scrollbar;
     -ms-flex-direction:column;
