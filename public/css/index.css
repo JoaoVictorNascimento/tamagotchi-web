@@ -1290,3 +1290,18 @@ label {
     left: -77px;
     color: rgb(181, 176, 176) !important;
 }
+
+.close-btn {
+    border: 1px solid rgb(149, 146, 146);
+    border-radius: 6px;
+    outline: none;
+    /* padding: 6px 17px; */
+    margin-top: 25px;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 1px 6px black;
+    background-color: rgb(149, 146, 146);
+    color: black;
+    top: -40px;
+    left: 160px;
+    position: relative;
+}
