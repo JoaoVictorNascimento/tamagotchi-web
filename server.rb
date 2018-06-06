@@ -386,6 +386,15 @@ class App < Sinatra::Base
 				"weigh" => pet.weight
 			}.to_json
 		end
+
+		delete '/pet/:id' do |id|
+			protected!
+			pet = VirtualPetModel.where({
+				"id"=> id
+			})
+			pet.destroy
+			{"msg" => "pet deleted"}.to_json
+		end
 		# END HERE
 
 		# MINIGAME ROUTES
