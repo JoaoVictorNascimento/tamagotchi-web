@@ -17,6 +17,7 @@ $(document).ready(function () {
                             '</br>' +
                             '<a>'+pet.state+'</a>' +
                         '</div>'+
+                        '<button type="button" class="my-button-form1" onClick="death()">' +' Kill'  +'</button>' +
                     '</div>'+
                 '</li>'
             )
@@ -41,4 +42,8 @@ function petDead(pet){
     else{
         return false
     }
+}
+
+function death(pet) {
+
 }
